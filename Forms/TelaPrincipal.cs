@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BibliotecaDesafioAuthSoft.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +21,14 @@ namespace BibliotecaDesafioAuthSoft
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonCadastrarLivros_Click(object sender, EventArgs e)
+        {
+            using (FormCadastrarLivros formCadastro = new FormCadastrarLivros())
+            {
+                formCadastro.ShowDialog();
+            }
         }
     }
 }
