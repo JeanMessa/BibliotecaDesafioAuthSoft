@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BibliotecaDesafioAuthSoft.Models;
+using BibliotecaDesafioAuthSoft.Service;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +14,8 @@ namespace BibliotecaDesafioAuthSoft.Forms
 {
     public partial class FormCadastrarLivros : Form
     {
+        private readonly LivroService _service = new LivroService();
+
         public FormCadastrarLivros()
         {
             InitializeComponent();
@@ -21,5 +25,38 @@ namespace BibliotecaDesafioAuthSoft.Forms
         {
 
         }
+
+        private void ButtonSalvar_Click(object sender, EventArgs e)
+        {
+            Livro livro = new Livro
+            {
+                Titulo = txtTitulo.Text,
+                Autor = txtAutor.Text,
+                Ano = (int)numAno.Value,
+                Exemplares = (int)numExemplares.Value
+            };
+
+            string error = _service.CheckErrosAndSave(livro);
+
+            if (error != null && error != "")
+            {
+                MessageBox.Show(error, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                MessageBox.Show("Livro cadastrado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ClearFields();
+            }
+
+        }
+
+        private void ClearFields()
+        {
+            txtTitulo.Text = "";
+            txtAutor.Text = "";
+            numAno.Value = DateTime.Now.Year;
+            numExemplares.Value = 1;
+        }
     }
+
 }
