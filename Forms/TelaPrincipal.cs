@@ -23,12 +23,14 @@ namespace BibliotecaDesafioAuthSoft
 
         }
 
-        private void buttonCadastrarLivros_Click(object sender, EventArgs e)
+        private void buttonCadastrar_Click(object sender, EventArgs e)
         {
             using (FormCadastrarLivros formCadastro = new FormCadastrarLivros())
             {
                 formCadastro.ShowDialog();
+                this.Hide();
             }
         }
+
     }
 }
