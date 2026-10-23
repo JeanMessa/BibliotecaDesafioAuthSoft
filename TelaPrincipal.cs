@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace BibliotecaDesafioAuthSoft
 {
-    public partial class Form1 : Form
+    public partial class TelaPrincipal : Form
     {
-        public Form1()
+        public TelaPrincipal()
         {
             InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
