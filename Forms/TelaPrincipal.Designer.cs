@@ -111,6 +111,7 @@
             this.buttonVisualizar.TabIndex = 3;
             this.buttonVisualizar.Text = "Visualizar";
             this.buttonVisualizar.UseVisualStyleBackColor = true;
+            this.buttonVisualizar.Click += new System.EventHandler(this.buttonVisualizar_Click);
             // 
             // labelEmprestimo
             // 

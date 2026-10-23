@@ -32,5 +32,18 @@ namespace BibliotecaDesafioAuthSoft
             }
         }
 
+        private void buttonVisualizar_Click(object sender, EventArgs e)
+        {
+            using (FormVisualizarLivros formVisualizarLivros = new FormVisualizarLivros())
+            {
+                formVisualizarLivros.ShowDialog();
+                formVisualizarLivros.Hide();
+            }
+        }
+
+        private void buttonVisualizar_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
