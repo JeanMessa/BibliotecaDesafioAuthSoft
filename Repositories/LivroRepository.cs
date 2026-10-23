@@ -10,7 +10,7 @@ namespace BibliotecaDesafioAuthSoft.Repositories
 {
     public class LivroRepository
     {
-        private readonly string connectionString = "Data Source=biblioteca.db;";
+        private readonly string connectionString = @"Data Source=..\..\database\biblioteca.db;";
         public void Create(Livro livro)
         {
             using (SqliteConnection connection = new SqliteConnection(connectionString))
