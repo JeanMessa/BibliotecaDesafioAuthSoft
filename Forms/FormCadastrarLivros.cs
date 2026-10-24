@@ -57,6 +57,14 @@ namespace BibliotecaDesafioAuthSoft.Forms
             numAno.Value = DateTime.Now.Year;
             numExemplares.Value = 1;
         }
+
+        private void buttonCancelar_Click(object sender, EventArgs e)
+        {
+            TelaPrincipal telaPrincipal = new TelaPrincipal();
+
+            telaPrincipal.Show();
+            this.Close();
+        }
     }
 
 }

@@ -39,7 +39,7 @@
             this.LabelExemplares = new System.Windows.Forms.Label();
             this.numExemplares = new System.Windows.Forms.NumericUpDown();
             this.ButtonSalvar = new System.Windows.Forms.Button();
-            this.ButtonCancelar = new System.Windows.Forms.Button();
+            this.buttonCancelar = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numAno)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numExemplares)).BeginInit();
@@ -74,7 +74,7 @@
             this.tableLayoutPanel1.Controls.Add(this.LabelExemplares, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.numExemplares, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.ButtonSalvar, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.ButtonCancelar, 1, 5);
+            this.tableLayoutPanel1.Controls.Add(this.buttonCancelar, 1, 5);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -222,24 +222,25 @@
             this.ButtonSalvar.UseVisualStyleBackColor = false;
             this.ButtonSalvar.Click += new System.EventHandler(this.ButtonSalvar_Click);
             // 
-            // ButtonCancelar
+            // buttonCancelar
             // 
-            this.ButtonCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.buttonCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonCancelar.AutoSize = true;
-            this.ButtonCancelar.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ButtonCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.ButtonCancelar.ForeColor = System.Drawing.Color.White;
-            this.ButtonCancelar.Location = new System.Drawing.Point(467, 520);
-            this.ButtonCancelar.Margin = new System.Windows.Forms.Padding(25, 25, 200, 25);
-            this.ButtonCancelar.MaximumSize = new System.Drawing.Size(0, 80);
-            this.ButtonCancelar.Name = "ButtonCancelar";
-            this.ButtonCancelar.Padding = new System.Windows.Forms.Padding(11, 10, 11, 10);
-            this.ButtonCancelar.Size = new System.Drawing.Size(221, 77);
-            this.ButtonCancelar.TabIndex = 9;
-            this.ButtonCancelar.Text = "Cancelar";
-            this.ButtonCancelar.UseVisualStyleBackColor = false;
+            this.buttonCancelar.AutoSize = true;
+            this.buttonCancelar.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.buttonCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
+            this.buttonCancelar.ForeColor = System.Drawing.Color.White;
+            this.buttonCancelar.Location = new System.Drawing.Point(467, 520);
+            this.buttonCancelar.Margin = new System.Windows.Forms.Padding(25, 25, 200, 25);
+            this.buttonCancelar.MaximumSize = new System.Drawing.Size(0, 80);
+            this.buttonCancelar.Name = "buttonCancelar";
+            this.buttonCancelar.Padding = new System.Windows.Forms.Padding(11, 10, 11, 10);
+            this.buttonCancelar.Size = new System.Drawing.Size(221, 77);
+            this.buttonCancelar.TabIndex = 9;
+            this.buttonCancelar.Text = "Cancelar";
+            this.buttonCancelar.UseVisualStyleBackColor = false;
+            this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
             // 
             // FormCadastrarLivros
             // 
@@ -273,6 +274,6 @@
         private System.Windows.Forms.Label LabelExemplares;
         private System.Windows.Forms.NumericUpDown numExemplares;
         private System.Windows.Forms.Button ButtonSalvar;
-        private System.Windows.Forms.Button ButtonCancelar;
+        private System.Windows.Forms.Button buttonCancelar;
     }
 }

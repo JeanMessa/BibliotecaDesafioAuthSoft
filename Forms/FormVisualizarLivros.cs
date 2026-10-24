@@ -43,5 +43,13 @@ namespace BibliotecaDesafioAuthSoft.Forms
             List<Livro> livros = _livroService.GetAllLivros();
             dataGridViewLivros.DataSource = livros;
         }
+
+        private void buttonCancelar_Click(object sender, EventArgs e)
+        {
+            TelaPrincipal telaPrincipal = new TelaPrincipal();
+
+            telaPrincipal.Show();
+            this.Close();
+        }
     }
 }
