@@ -95,5 +95,28 @@ namespace BibliotecaDesafioAuthSoft.Repositories
             }
             return null;
         }
+
+        public void Update(Livro livro)
+        {
+            using (SqliteConnection connection = new SqliteConnection(connectionString))
+            {
+                connection.Open();
+                string query = @"
+                    UPDATE livro 
+                    SET titulo = @titulo, autor = @autor, ano = @ano, exemplares = @exemplares 
+                    WHERE id = @id;
+                ";
+                using (SqliteCommand command = new SqliteCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@titulo", livro.Titulo);
+                    command.Parameters.AddWithValue("@autor", livro.Autor);
+                    command.Parameters.AddWithValue("@ano", livro.Ano);
+                    command.Parameters.AddWithValue("@exemplares", livro.Exemplares);
+                    command.Parameters.AddWithValue("@id", livro.Id);
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
     }
+
 }

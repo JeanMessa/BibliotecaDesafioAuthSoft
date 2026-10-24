@@ -46,16 +46,32 @@ namespace BibliotecaDesafioAuthSoft.Forms
                 Exemplares = (int)numExemplares.Value
             };
 
-            string error = _service.CheckErrosAndSave(livro);
+            string error;
+
+            if (_idLivro == null)
+            {
+                error = _service.CheckErrorsAndCreate(livro);
+            }
+            else
+            {
+                livro.Id = _idLivro.Value;
+                error = _service.CheckErrorsAndEdit(livro);
+            }
+            
 
             if (error != null && error != "")
             {
                 MessageBox.Show(error, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            else
+            else if(_idLivro == null)
             {
                 MessageBox.Show("Livro cadastrado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 ClearFields();
+            }
+            else
+            {
+                MessageBox.Show("Livro editado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
             }
 
         }

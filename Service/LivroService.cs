@@ -12,7 +12,29 @@ namespace BibliotecaDesafioAuthSoft.Service
     {
         private readonly LivroRepository _repository = new LivroRepository();
 
-        public string CheckErrosAndSave(Livro livro)
+        public string CheckErrorsAndCreate(Livro livro)
+        {
+            string error = CheckErrors(livro);
+
+            if (error == null || error == "")
+            {
+                _repository.Create(livro);
+            }
+
+            return error;
+        }
+
+        public string CheckErrorsAndEdit(Livro livro)
+        {
+            string error = CheckErrors(livro);
+            if (error == null || error == "")
+            {
+                _repository.Update(livro);
+            }
+            return error;
+        }
+
+        private String CheckErrors(Livro livro)
         {
             if (string.IsNullOrWhiteSpace(livro.Titulo))
             {
@@ -34,8 +56,6 @@ namespace BibliotecaDesafioAuthSoft.Service
             {
                 return "A quantidade de exemplares deve estar entre 1 e 99.";
             }
-
-            _repository.Create(livro);
 
             return string.Empty;
         }
