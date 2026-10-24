@@ -39,5 +39,10 @@ namespace BibliotecaDesafioAuthSoft.Service
 
             return string.Empty;
         }
+
+        public List<Livro> GetAllLivros()
+        {
+            return _repository.GetAll();
+        }
     }
 }

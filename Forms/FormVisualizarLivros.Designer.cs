@@ -31,14 +31,14 @@
             this.LabelTitulo = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridViewLivros = new System.Windows.Forms.DataGridView();
+            this.ButtonEditar = new System.Windows.Forms.Button();
+            this.buttonExcluir = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Titulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Autor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ano = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Exemplares = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ButtonEditar = new System.Windows.Forms.Button();
-            this.buttonExcluir = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLivros)).BeginInit();
             this.SuspendLayout();
@@ -99,41 +99,6 @@
             this.dataGridViewLivros.Size = new System.Drawing.Size(700, 267);
             this.dataGridViewLivros.TabIndex = 2;
             // 
-            // Id
-            // 
-            this.Id.HeaderText = "Id";
-            this.Id.MinimumWidth = 6;
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            // 
-            // Titulo
-            // 
-            this.Titulo.HeaderText = "Titulo";
-            this.Titulo.MinimumWidth = 6;
-            this.Titulo.Name = "Titulo";
-            this.Titulo.ReadOnly = true;
-            // 
-            // Autor
-            // 
-            this.Autor.HeaderText = "Autor";
-            this.Autor.MinimumWidth = 6;
-            this.Autor.Name = "Autor";
-            this.Autor.ReadOnly = true;
-            // 
-            // Ano
-            // 
-            this.Ano.HeaderText = "Ano";
-            this.Ano.MinimumWidth = 6;
-            this.Ano.Name = "Ano";
-            this.Ano.ReadOnly = true;
-            // 
-            // Exemplares
-            // 
-            this.Exemplares.HeaderText = "Exemplares";
-            this.Exemplares.MinimumWidth = 6;
-            this.Exemplares.Name = "Exemplares";
-            this.Exemplares.ReadOnly = true;
-            // 
             // ButtonEditar
             // 
             this.ButtonEditar.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -191,6 +156,46 @@
             this.button1.Text = "Cancelar";
             this.button1.UseVisualStyleBackColor = false;
             // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.MinimumWidth = 6;
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            // 
+            // Titulo
+            // 
+            this.Titulo.DataPropertyName = "Titulo";
+            this.Titulo.HeaderText = "Titulo";
+            this.Titulo.MinimumWidth = 6;
+            this.Titulo.Name = "Titulo";
+            this.Titulo.ReadOnly = true;
+            // 
+            // Autor
+            // 
+            this.Autor.DataPropertyName = "Autor";
+            this.Autor.HeaderText = "Autor";
+            this.Autor.MinimumWidth = 6;
+            this.Autor.Name = "Autor";
+            this.Autor.ReadOnly = true;
+            // 
+            // Ano
+            // 
+            this.Ano.DataPropertyName = "Ano";
+            this.Ano.HeaderText = "Ano";
+            this.Ano.MinimumWidth = 6;
+            this.Ano.Name = "Ano";
+            this.Ano.ReadOnly = true;
+            // 
+            // Exemplares
+            // 
+            this.Exemplares.DataPropertyName = "Exemplares";
+            this.Exemplares.HeaderText = "Exemplares";
+            this.Exemplares.MinimumWidth = 6;
+            this.Exemplares.Name = "Exemplares";
+            this.Exemplares.ReadOnly = true;
+            // 
             // FormVisualizarLivros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -214,13 +219,13 @@
         private System.Windows.Forms.Label LabelTitulo;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.DataGridView dataGridViewLivros;
+        private System.Windows.Forms.Button ButtonEditar;
+        private System.Windows.Forms.Button buttonExcluir;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Titulo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Autor;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ano;
         private System.Windows.Forms.DataGridViewTextBoxColumn Exemplares;
-        private System.Windows.Forms.Button ButtonEditar;
-        private System.Windows.Forms.Button buttonExcluir;
-        private System.Windows.Forms.Button button1;
     }
 }

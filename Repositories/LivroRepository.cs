@@ -33,5 +33,41 @@ namespace BibliotecaDesafioAuthSoft.Repositories
                 }
             }
         }
+
+        public List<Livro> GetAll()
+        {
+            List<Livro> livros = new List<Livro>();
+
+            using (SqliteConnection connection = new SqliteConnection(connectionString))
+            {
+                connection.Open();
+
+                string query = "SELECT id, titulo, autor, ano, exemplares FROM livro"; 
+
+                using (SqliteCommand command = new SqliteCommand(query, connection))
+                {
+                    using (SqliteDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Livro livro = new Livro
+                            {
+                                Id = reader.GetInt32(0),
+                                Titulo = reader.GetString(1),
+                                Autor = reader.GetString(2),
+                                Ano = reader.GetInt32(3),
+                                Exemplares = reader.GetInt32(4)
+                            };
+
+                            livros.Add(livro);
+                        }
+                    }
+                }
+            }
+
+            return livros;
+        }
     }
+
+
 }
