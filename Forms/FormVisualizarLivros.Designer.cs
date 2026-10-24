@@ -31,14 +31,14 @@
             this.LabelTitulo = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridViewLivros = new System.Windows.Forms.DataGridView();
-            this.ButtonEditar = new System.Windows.Forms.Button();
-            this.buttonExcluir = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Titulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Autor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ano = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Exemplares = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ButtonEditar = new System.Windows.Forms.Button();
+            this.buttonExcluir = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLivros)).BeginInit();
             this.SuspendLayout();
@@ -93,69 +93,14 @@
             this.dataGridViewLivros.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewLivros.Location = new System.Drawing.Point(50, 81);
             this.dataGridViewLivros.Margin = new System.Windows.Forms.Padding(50, 3, 50, 3);
+            this.dataGridViewLivros.MultiSelect = false;
             this.dataGridViewLivros.Name = "dataGridViewLivros";
+            this.dataGridViewLivros.RowHeadersVisible = false;
             this.dataGridViewLivros.RowHeadersWidth = 51;
             this.dataGridViewLivros.RowTemplate.Height = 24;
+            this.dataGridViewLivros.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewLivros.Size = new System.Drawing.Size(700, 267);
             this.dataGridViewLivros.TabIndex = 2;
-            // 
-            // ButtonEditar
-            // 
-            this.ButtonEditar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ButtonEditar.AutoSize = true;
-            this.ButtonEditar.BackColor = System.Drawing.Color.Goldenrod;
-            this.ButtonEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.ButtonEditar.ForeColor = System.Drawing.Color.White;
-            this.ButtonEditar.Location = new System.Drawing.Point(51, 376);
-            this.ButtonEditar.Margin = new System.Windows.Forms.Padding(10, 25, 10, 25);
-            this.ButtonEditar.MaximumSize = new System.Drawing.Size(0, 80);
-            this.ButtonEditar.MinimumSize = new System.Drawing.Size(0, 80);
-            this.ButtonEditar.Name = "ButtonEditar";
-            this.ButtonEditar.Padding = new System.Windows.Forms.Padding(11, 10, 11, 10);
-            this.ButtonEditar.Size = new System.Drawing.Size(164, 80);
-            this.ButtonEditar.TabIndex = 3;
-            this.ButtonEditar.Text = "Editar";
-            this.ButtonEditar.UseVisualStyleBackColor = false;
-            // 
-            // buttonExcluir
-            // 
-            this.buttonExcluir.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonExcluir.AutoSize = true;
-            this.buttonExcluir.BackColor = System.Drawing.Color.Red;
-            this.buttonExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.buttonExcluir.ForeColor = System.Drawing.Color.White;
-            this.buttonExcluir.Location = new System.Drawing.Point(308, 376);
-            this.buttonExcluir.Margin = new System.Windows.Forms.Padding(10, 25, 10, 25);
-            this.buttonExcluir.MaximumSize = new System.Drawing.Size(0, 80);
-            this.buttonExcluir.MinimumSize = new System.Drawing.Size(0, 80);
-            this.buttonExcluir.Name = "buttonExcluir";
-            this.buttonExcluir.Padding = new System.Windows.Forms.Padding(11, 10, 11, 10);
-            this.buttonExcluir.Size = new System.Drawing.Size(181, 80);
-            this.buttonExcluir.TabIndex = 4;
-            this.buttonExcluir.Text = "Excluir";
-            this.buttonExcluir.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.AutoSize = true;
-            this.button1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(555, 376);
-            this.button1.Margin = new System.Windows.Forms.Padding(10, 25, 10, 25);
-            this.button1.MaximumSize = new System.Drawing.Size(0, 80);
-            this.button1.MinimumSize = new System.Drawing.Size(0, 80);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(11, 10, 11, 10);
-            this.button1.Size = new System.Drawing.Size(221, 80);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Cancelar";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.buttonCancelar_Click);
             // 
             // Id
             // 
@@ -196,6 +141,65 @@
             this.Exemplares.MinimumWidth = 6;
             this.Exemplares.Name = "Exemplares";
             this.Exemplares.ReadOnly = true;
+            // 
+            // ButtonEditar
+            // 
+            this.ButtonEditar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ButtonEditar.AutoSize = true;
+            this.ButtonEditar.BackColor = System.Drawing.Color.Goldenrod;
+            this.ButtonEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
+            this.ButtonEditar.ForeColor = System.Drawing.Color.White;
+            this.ButtonEditar.Location = new System.Drawing.Point(51, 376);
+            this.ButtonEditar.Margin = new System.Windows.Forms.Padding(10, 25, 10, 25);
+            this.ButtonEditar.MaximumSize = new System.Drawing.Size(0, 80);
+            this.ButtonEditar.MinimumSize = new System.Drawing.Size(0, 80);
+            this.ButtonEditar.Name = "ButtonEditar";
+            this.ButtonEditar.Padding = new System.Windows.Forms.Padding(11, 10, 11, 10);
+            this.ButtonEditar.Size = new System.Drawing.Size(164, 80);
+            this.ButtonEditar.TabIndex = 3;
+            this.ButtonEditar.Text = "Editar";
+            this.ButtonEditar.UseVisualStyleBackColor = false;
+            this.ButtonEditar.Click += new System.EventHandler(this.ButtonEditar_Click);
+            // 
+            // buttonExcluir
+            // 
+            this.buttonExcluir.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonExcluir.AutoSize = true;
+            this.buttonExcluir.BackColor = System.Drawing.Color.Red;
+            this.buttonExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
+            this.buttonExcluir.ForeColor = System.Drawing.Color.White;
+            this.buttonExcluir.Location = new System.Drawing.Point(308, 376);
+            this.buttonExcluir.Margin = new System.Windows.Forms.Padding(10, 25, 10, 25);
+            this.buttonExcluir.MaximumSize = new System.Drawing.Size(0, 80);
+            this.buttonExcluir.MinimumSize = new System.Drawing.Size(0, 80);
+            this.buttonExcluir.Name = "buttonExcluir";
+            this.buttonExcluir.Padding = new System.Windows.Forms.Padding(11, 10, 11, 10);
+            this.buttonExcluir.Size = new System.Drawing.Size(181, 80);
+            this.buttonExcluir.TabIndex = 4;
+            this.buttonExcluir.Text = "Excluir";
+            this.buttonExcluir.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button1.AutoSize = true;
+            this.button1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(555, 376);
+            this.button1.Margin = new System.Windows.Forms.Padding(10, 25, 10, 25);
+            this.button1.MaximumSize = new System.Drawing.Size(0, 80);
+            this.button1.MinimumSize = new System.Drawing.Size(0, 80);
+            this.button1.Name = "button1";
+            this.button1.Padding = new System.Windows.Forms.Padding(11, 10, 11, 10);
+            this.button1.Size = new System.Drawing.Size(221, 80);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Cancelar";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.buttonCancelar_Click);
             // 
             // FormVisualizarLivros
             // 

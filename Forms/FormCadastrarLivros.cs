@@ -14,11 +14,19 @@ namespace BibliotecaDesafioAuthSoft.Forms
 {
     public partial class FormCadastrarLivros : Form
     {
+        private int? _idLivro = null;
         private readonly LivroService _service = new LivroService();
 
         public FormCadastrarLivros()
         {
             InitializeComponent();
+        }
+
+        public FormCadastrarLivros(int id)
+        {
+            InitializeComponent();
+            _idLivro = id;
+            LoadLivroToEdit(id);
         }
 
         private void FormCadastrarLivros_Load(object sender, EventArgs e)
@@ -61,10 +69,26 @@ namespace BibliotecaDesafioAuthSoft.Forms
 
         private void buttonCancelar_Click(object sender, EventArgs e)
         {
-            TelaPrincipal telaPrincipal = new TelaPrincipal();
+            if(_idLivro == null)
+            {
+                TelaPrincipal telaPrincipal = new TelaPrincipal();
+                telaPrincipal.Show();
+            }
 
-            telaPrincipal.Show();
             this.Close();
+        }
+
+        private void LoadLivroToEdit(int id)
+        {
+            Livro livro = _service.GetLivroById(id);
+
+            if (livro != null)
+            {
+                txtTitulo.Text = livro.Titulo;
+                txtAutor.Text = livro.Autor;
+                numAno.Value = livro.Ano;
+                numExemplares.Value = livro.Exemplares;
+            }
         }
     }
 

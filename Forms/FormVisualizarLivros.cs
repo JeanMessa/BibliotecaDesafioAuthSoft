@@ -51,5 +51,24 @@ namespace BibliotecaDesafioAuthSoft.Forms
             telaPrincipal.Show();
             this.Close();
         }
+
+        private void ButtonEditar_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow selectedRow = dataGridViewLivros.SelectedRows[0];
+            if(selectedRow == null)
+            {
+                MessageBox.Show("Selecione um livro na tabela para editar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                int id = Convert.ToInt32(selectedRow.Cells["Id"].Value);
+
+                FormCadastrarLivros formCadastro = new FormCadastrarLivros(id);
+                formCadastro.ShowDialog();
+
+                LoadLivrosIntoGridView();
+            }
+
+        }
     }
 }

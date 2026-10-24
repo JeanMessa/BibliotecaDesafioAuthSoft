@@ -42,7 +42,7 @@ namespace BibliotecaDesafioAuthSoft.Repositories
             {
                 connection.Open();
 
-                string query = "SELECT id, titulo, autor, ano, exemplares FROM livro"; 
+                string query = "SELECT id, titulo, autor, ano, exemplares FROM livro";
 
                 using (SqliteCommand command = new SqliteCommand(query, connection))
                 {
@@ -67,7 +67,33 @@ namespace BibliotecaDesafioAuthSoft.Repositories
 
             return livros;
         }
+
+        public Livro GetById(int id)
+        {
+            using (SqliteConnection connection = new SqliteConnection(connectionString))
+            {
+                connection.Open();
+                string query = "SELECT id, titulo, autor, ano, exemplares FROM livro WHERE id = @id";
+                using (SqliteCommand command = new SqliteCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@id", id);
+                    using (SqliteDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return new Livro
+                            {
+                                Id = reader.GetInt32(0),
+                                Titulo = reader.GetString(1),
+                                Autor = reader.GetString(2),
+                                Ano = reader.GetInt32(3),
+                                Exemplares = reader.GetInt32(4)
+                            };
+                        }
+                    }
+                }
+            }
+            return null;
+        }
     }
-
-
 }
