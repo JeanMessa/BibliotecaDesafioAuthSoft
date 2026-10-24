@@ -117,6 +117,19 @@ namespace BibliotecaDesafioAuthSoft.Repositories
                 }
             }
         }
-    }
 
+        public void Delete(int id)
+        {
+            using (SqliteConnection connection = new SqliteConnection(connectionString))
+            {
+                connection.Open();
+                string query = "DELETE FROM livro WHERE id = @id";
+                using (SqliteCommand command = new SqliteCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@id", id);
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+    }
 }

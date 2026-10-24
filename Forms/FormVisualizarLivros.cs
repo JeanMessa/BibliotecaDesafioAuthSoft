@@ -70,5 +70,25 @@ namespace BibliotecaDesafioAuthSoft.Forms
             }
 
         }
+
+        private void buttonExcluir_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow selectedRow = dataGridViewLivros.SelectedRows[0];
+            if (selectedRow == null)
+            {
+                MessageBox.Show("Selecione um livro na tabela para editar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                DialogResult result = MessageBox.Show("Tem certeza que deseja excluir o livro selecionado?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    int id = Convert.ToInt32(selectedRow.Cells["Id"].Value);
+                    _livroService.DeleteLivro(id);
+                    LoadLivrosIntoGridView();
+                }
+            }
+            
+        }
     }
 }

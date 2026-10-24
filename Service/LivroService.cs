@@ -69,5 +69,10 @@ namespace BibliotecaDesafioAuthSoft.Service
         {
             return _repository.GetById(id);
         }
+
+        public void DeleteLivro(int id)
+        {
+            _repository.Delete(id);
+        }
     }
 }
