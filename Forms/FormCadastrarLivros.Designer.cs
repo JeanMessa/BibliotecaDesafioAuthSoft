@@ -250,7 +250,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormCadastrarLivros";
-            this.Text = "FormCadastrarLivros";
+            this.Text = "Cadastrar Livros";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormCadastrarLivros_Load);
             this.tableLayoutPanel1.ResumeLayout(false);

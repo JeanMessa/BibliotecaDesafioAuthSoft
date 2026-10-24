@@ -27,6 +27,7 @@ namespace BibliotecaDesafioAuthSoft.Forms
             InitializeComponent();
             _idLivro = id;
             LoadLivroToEdit(id);
+            ConfigLayoutToEdit();
         }
 
         private void FormCadastrarLivros_Load(object sender, EventArgs e)
@@ -69,7 +70,7 @@ namespace BibliotecaDesafioAuthSoft.Forms
 
         private void buttonCancelar_Click(object sender, EventArgs e)
         {
-            if(_idLivro == null)
+            if (_idLivro == null)
             {
                 TelaPrincipal telaPrincipal = new TelaPrincipal();
                 telaPrincipal.Show();
@@ -90,6 +91,11 @@ namespace BibliotecaDesafioAuthSoft.Forms
                 numExemplares.Value = livro.Exemplares;
             }
         }
-    }
 
+        private void ConfigLayoutToEdit()
+        {
+            this.Text = "Editar Livro";
+            LabelTitulo.Text = "Editar Livro";
+        }
+    }
 }
