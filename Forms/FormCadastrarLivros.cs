@@ -23,7 +23,8 @@ namespace BibliotecaDesafioAuthSoft.Forms
 
         private void FormCadastrarLivros_Load(object sender, EventArgs e)
         {
-
+            numAno.Maximum = DateTime.Now.Year;
+            numAno.Value = DateTime.Now.Year;
         }
 
         private void ButtonSalvar_Click(object sender, EventArgs e)
