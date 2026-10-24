@@ -140,6 +140,7 @@
             this.buttonCadastrarEmprestimo.TabIndex = 5;
             this.buttonCadastrarEmprestimo.Text = "Cadastrar Empréstimo";
             this.buttonCadastrarEmprestimo.UseVisualStyleBackColor = true;
+            this.buttonCadastrarEmprestimo.Click += new System.EventHandler(this.buttonCadastrarEmprestimo_Click);
             // 
             // buttonCadastrarDevolucao
             // 

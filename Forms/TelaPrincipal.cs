@@ -40,5 +40,14 @@ namespace BibliotecaDesafioAuthSoft
                 this.Hide();
             }
         }
+
+        private void buttonCadastrarEmprestimo_Click(object sender, EventArgs e)
+        {
+            using (FormCadastrarEmprestimo formCadastrarEmprestimo = new FormCadastrarEmprestimo())
+            {
+                formCadastrarEmprestimo.ShowDialog();
+                this.Hide();
+            }
+        }
     }
 }
