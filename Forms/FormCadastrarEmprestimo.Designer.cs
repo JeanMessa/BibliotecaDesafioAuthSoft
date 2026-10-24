@@ -38,9 +38,9 @@
             this.Exemplares = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ButtonSalvar = new System.Windows.Forms.Button();
             this.buttonCancelar = new System.Windows.Forms.Button();
+            this.tableLayoutPanelLeitor = new System.Windows.Forms.TableLayoutPanel();
             this.labelLeitor = new System.Windows.Forms.Label();
             this.txtLeitor = new System.Windows.Forms.TextBox();
-            this.tableLayoutPanelLeitor = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanelData = new System.Windows.Forms.TableLayoutPanel();
             this.labelData = new System.Windows.Forms.Label();
             this.dateEmprestimo = new System.Windows.Forms.DateTimePicker();
@@ -187,6 +187,23 @@
             this.buttonCancelar.TabIndex = 4;
             this.buttonCancelar.Text = "Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = false;
+            this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
+            // 
+            // tableLayoutPanelLeitor
+            // 
+            this.tableLayoutPanelLeitor.ColumnCount = 2;
+            this.tableLayoutPanelLeitor.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanelLeitor.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanelLeitor.Controls.Add(this.labelLeitor, 0, 0);
+            this.tableLayoutPanelLeitor.Controls.Add(this.txtLeitor, 1, 0);
+            this.tableLayoutPanelLeitor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanelLeitor.Location = new System.Drawing.Point(3, 261);
+            this.tableLayoutPanelLeitor.Name = "tableLayoutPanelLeitor";
+            this.tableLayoutPanelLeitor.RowCount = 1;
+            this.tableLayoutPanelLeitor.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelLeitor.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
+            this.tableLayoutPanelLeitor.Size = new System.Drawing.Size(394, 80);
+            this.tableLayoutPanelLeitor.TabIndex = 5;
             // 
             // labelLeitor
             // 
@@ -210,22 +227,6 @@
             this.txtLeitor.Size = new System.Drawing.Size(177, 55);
             this.txtLeitor.TabIndex = 3;
             // 
-            // tableLayoutPanelLeitor
-            // 
-            this.tableLayoutPanelLeitor.ColumnCount = 2;
-            this.tableLayoutPanelLeitor.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelLeitor.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelLeitor.Controls.Add(this.labelLeitor, 0, 0);
-            this.tableLayoutPanelLeitor.Controls.Add(this.txtLeitor, 1, 0);
-            this.tableLayoutPanelLeitor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelLeitor.Location = new System.Drawing.Point(3, 261);
-            this.tableLayoutPanelLeitor.Name = "tableLayoutPanelLeitor";
-            this.tableLayoutPanelLeitor.RowCount = 1;
-            this.tableLayoutPanelLeitor.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelLeitor.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanelLeitor.Size = new System.Drawing.Size(394, 80);
-            this.tableLayoutPanelLeitor.TabIndex = 5;
-            // 
             // tableLayoutPanelData
             // 
             this.tableLayoutPanelData.ColumnCount = 2;
@@ -239,7 +240,7 @@
             this.tableLayoutPanelData.Name = "tableLayoutPanelData";
             this.tableLayoutPanelData.RowCount = 1;
             this.tableLayoutPanelData.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelData.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanelData.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
             this.tableLayoutPanelData.Size = new System.Drawing.Size(344, 80);
             this.tableLayoutPanelData.TabIndex = 6;
             // 
@@ -276,6 +277,7 @@
             this.Name = "FormCadastrarEmprestimo";
             this.Text = "FormCadastrarEmprestimo";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FormCadastrarEmprestimo_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLivros)).EndInit();
