@@ -47,7 +47,10 @@ namespace BibliotecaDesafioAuthSoft.Forms
 
         private void buttonCancelar_Click(object sender, EventArgs e)
         {
+            TelaPrincipal telaPrincipal = new TelaPrincipal();
 
+            telaPrincipal.Show();
+            this.Close();
         }
     }
 }
