@@ -59,5 +59,13 @@ namespace BibliotecaDesafioAuthSoft.Forms
         {
             labelMultaTotal.Text = $"Multa Total: {_emprestimoService.GetMultaTotalByDataDevolucao(dateDevolucao.Value.Date)}";
         }
+
+        private void buttonVoltar_Click(object sender, EventArgs e)
+        {
+            TelaPrincipal telaPrincipal = new TelaPrincipal();
+
+            telaPrincipal.Show();
+            this.Close();
+        }
     }
 }
