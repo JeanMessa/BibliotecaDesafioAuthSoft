@@ -24,6 +24,8 @@ namespace BibliotecaDesafioAuthSoft.Forms
         {
             AdjustGridViewColumns();
             LoadEmprestimosEmAberto();
+            dateDevolucao.Value = DateTime.Now;
+            dateDevolucao.MaxDate = DateTime.Now;
         }
 
         private void AdjustGridViewColumns()
