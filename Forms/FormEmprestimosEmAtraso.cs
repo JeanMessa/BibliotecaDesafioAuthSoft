@@ -43,5 +43,13 @@ namespace BibliotecaDesafioAuthSoft.Forms
             List<EmprestimosEmAtrasoDTO> emprestimosEmAtraso = emprestimoService.GetEmprestimosEmAtraso();
             dataGridViewEmprestimo.DataSource = emprestimosEmAtraso;
         }
+
+        private void buttonVoltar_Click(object sender, EventArgs e)
+        {
+            TelaPrincipal telaPrincipal = new TelaPrincipal();
+
+            telaPrincipal.Show();
+            this.Close();
+        }
     }
 }
