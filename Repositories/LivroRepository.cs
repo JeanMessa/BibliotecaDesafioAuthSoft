@@ -96,6 +96,28 @@ namespace BibliotecaDesafioAuthSoft.Repositories
             return null;
         }
 
+        public int GetExemplaresDisponiveis(int livroId)
+        {
+            using (SqliteConnection connection = new SqliteConnection(connectionString))
+            {
+                connection.Open();
+                string query = @"
+                    SELECT l.exemplares - (
+                        SELECT COUNT(*) 
+                        FROM emprestimo e 
+                        WHERE e.livro_id = l.id AND e.data_devolucao IS NULL
+                    ) AS exemplares_disponiveis
+                    FROM livro l
+                    WHERE l.id = @livroId;
+                ";
+                using (SqliteCommand command = new SqliteCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@livroId", livroId);
+                    object result = command.ExecuteScalar();
+                    return result != null ? Convert.ToInt32(result) : 0;
+                }
+            }
+        }
         public void Update(Livro livro)
         {
             using (SqliteConnection connection = new SqliteConnection(connectionString))

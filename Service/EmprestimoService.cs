@@ -30,6 +30,11 @@ namespace BibliotecaDesafioAuthSoft.Service
                 return "A data de empréstimo não pode ser maior que a data atual.";
             }
 
+            if(_livroService.GetExemplaresDisponiveis(livroId) <= 0)
+            {
+                return "Não há exemplares disponíveis para empréstimo.";
+            }
+
             Emprestimo emprestimo = new Emprestimo
             {
                 LivroId = livroId,
