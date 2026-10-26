@@ -37,6 +37,7 @@
             this.DiasAtraso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MultaPrevista = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonVoltar = new System.Windows.Forms.Button();
+            this.buttonExportarCSV = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmprestimo)).BeginInit();
             this.SuspendLayout();
@@ -49,6 +50,7 @@
             this.tableLayoutPanel1.Controls.Add(this.LabelTitulo, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.dataGridViewEmprestimo, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.buttonVoltar, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.buttonExportarCSV, 0, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
@@ -156,6 +158,26 @@
             this.buttonVoltar.UseVisualStyleBackColor = false;
             this.buttonVoltar.Click += new System.EventHandler(this.buttonVoltar_Click);
             // 
+            // buttonExportarCSV
+            // 
+            this.buttonExportarCSV.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonExportarCSV.AutoSize = true;
+            this.buttonExportarCSV.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.buttonExportarCSV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonExportarCSV.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
+            this.buttonExportarCSV.ForeColor = System.Drawing.Color.White;
+            this.buttonExportarCSV.Location = new System.Drawing.Point(35, 380);
+            this.buttonExportarCSV.Margin = new System.Windows.Forms.Padding(8, 20, 8, 20);
+            this.buttonExportarCSV.MaximumSize = new System.Drawing.Size(0, 65);
+            this.buttonExportarCSV.MinimumSize = new System.Drawing.Size(0, 65);
+            this.buttonExportarCSV.Name = "buttonExportarCSV";
+            this.buttonExportarCSV.Padding = new System.Windows.Forms.Padding(8);
+            this.buttonExportarCSV.Size = new System.Drawing.Size(330, 65);
+            this.buttonExportarCSV.TabIndex = 5;
+            this.buttonExportarCSV.Text = "Exportar para CSV";
+            this.buttonExportarCSV.UseVisualStyleBackColor = false;
+            this.buttonExportarCSV.Click += new System.EventHandler(this.buttonExportarCSV_Click);
+            // 
             // FormEmprestimosEmAtraso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -184,5 +206,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Leitor;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiasAtraso;
         private System.Windows.Forms.DataGridViewTextBoxColumn MultaPrevista;
+        private System.Windows.Forms.Button buttonExportarCSV;
     }
 }

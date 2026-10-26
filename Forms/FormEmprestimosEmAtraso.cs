@@ -1,5 +1,6 @@
 ﻿using BibliotecaDesafioAuthSoft.DTO;
 using BibliotecaDesafioAuthSoft.Service;
+using BibliotecaDesafioAuthSoft.Util;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -57,6 +58,18 @@ namespace BibliotecaDesafioAuthSoft.Forms
 
             telaPrincipal.Show();
             this.Close();
+        }
+
+        private void buttonExportarCSV_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewEmprestimo.Rows.Count == 0)
+            {
+                MessageBox.Show("Não há dados para exportar no momento.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                CSVExporter.ExportDataGridViewToCsv(dataGridViewEmprestimo, "Relatorio_Emprestimos_Atraso");
+            }
         }
     }
 }

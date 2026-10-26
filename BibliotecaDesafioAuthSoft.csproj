@@ -127,6 +127,7 @@
     <Compile Include="Service\EmprestimoService.cs" />
     <Compile Include="Service\LivroService.cs" />
     <Compile Include="DTO\EmprestimoAbertoDTO.cs" />
+    <Compile Include="Util\CSVExporter.cs" />
     <Compile Include="Util\UtilMulta.cs" />
     <EmbeddedResource Include="Forms\FormEmprestimosEmAtraso.resx">
       <DependentUpon>FormEmprestimosEmAtraso.cs</DependentUpon>
