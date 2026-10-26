@@ -110,5 +110,10 @@ namespace BibliotecaDesafioAuthSoft.Service
 
             return dtos;
         }
+
+        public List<EmprestimosMultaDTO> GetEmprestimosComMulta(DateTime dataDevolucao)
+        {
+            return _repository.GetEmprestimosComMultaByDataDevolucao(dataDevolucao);
+        }
     }
 }

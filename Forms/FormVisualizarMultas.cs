@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BibliotecaDesafioAuthSoft.DTO;
+using BibliotecaDesafioAuthSoft.Service;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +14,7 @@ namespace BibliotecaDesafioAuthSoft.Forms
 {
     public partial class FormVisualizarMultas : Form
     {
+        EmprestimoService _emprestimoService = new EmprestimoService();
         public FormVisualizarMultas()
         {
             InitializeComponent();
@@ -20,6 +23,9 @@ namespace BibliotecaDesafioAuthSoft.Forms
         private void FormVisualizarMultas_Load(object sender, EventArgs e)
         {
             AdjustGridViewColumns();
+            dateDevolucao.Value = DateTime.Now;
+            dateDevolucao.MaxDate = DateTime.Now;
+            LoadEmprestimosIntoGridView();
         }
 
         private void AdjustGridViewColumns()
@@ -33,6 +39,18 @@ namespace BibliotecaDesafioAuthSoft.Forms
                 dataGridViewEmprestimo.Columns["DataDevolucao"].FillWeight = 110;
                 dataGridViewEmprestimo.Columns["Multa"].FillWeight = 80;
             }
+        }
+
+        private void LoadEmprestimosIntoGridView()
+        {
+            DateTime dateTimeDevolucao = dateDevolucao.Value.Date;
+            List<EmprestimosMultaDTO> emprestimos = _emprestimoService.GetEmprestimosComMulta(dateTimeDevolucao);
+            dataGridViewEmprestimo.DataSource = emprestimos;
+        }
+
+        private void dateDevolucao_ValueChanged(object sender, EventArgs e)
+        {
+            LoadEmprestimosIntoGridView();
         }
     }
 }

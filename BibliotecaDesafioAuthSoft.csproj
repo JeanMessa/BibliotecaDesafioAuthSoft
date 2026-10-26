@@ -75,6 +75,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DTO\EmprestimosEmAtrasoDTO.cs" />
+    <Compile Include="DTO\EmprestimosMultaDTO.cs" />
     <Compile Include="Forms\FormEmprestimosEmAtraso.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -151,6 +151,7 @@
             this.dateDevolucao.Name = "dateDevolucao";
             this.dateDevolucao.Size = new System.Drawing.Size(226, 45);
             this.dateDevolucao.TabIndex = 3;
+            this.dateDevolucao.ValueChanged += new System.EventHandler(this.dateDevolucao_ValueChanged);
             // 
             // buttonVoltar
             // 

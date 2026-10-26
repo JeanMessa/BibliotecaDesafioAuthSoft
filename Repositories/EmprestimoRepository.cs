@@ -101,6 +101,42 @@ namespace BibliotecaDesafioAuthSoft.Repositories
             return emprestimos;  
         }
 
+        public List<EmprestimosMultaDTO> GetEmprestimosComMultaByDataDevolucao(DateTime dataDevolucao)
+        {
+            List<EmprestimosMultaDTO> emprestimos = new List<EmprestimosMultaDTO>();
+            using (SqliteConnection connection = new SqliteConnection(connectionString))
+            {
+                connection.Open();
+                string query = @"
+                    SELECT e.id, l.titulo, e.leitor, e.data_prevista, e.data_devolucao, e.multa_centavos
+                    FROM emprestimo e, livro l
+                    WHERE e.livro_id = l.id AND e.data_prevista < Date('now') AND e.data_devolucao = @dataDevolucao;
+                ";
+                using (SqliteCommand command = new SqliteCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@dataDevolucao", dataDevolucao.ToString("yyyy-MM-dd"));
+                    using (SqliteDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            EmprestimosMultaDTO emprestimo = new EmprestimosMultaDTO
+                            {
+                                Id = reader.GetInt32(0),
+                                LivroTitulo = reader.GetString(1),
+                                Leitor = reader.GetString(2),
+                                DevolucaoPrevista = reader.GetDateTime(3).ToString("dd/MM/yyyy"),
+                                DataDevolucao = reader.GetDateTime(4).ToString("dd/MM/yyyy"),
+                                Multa = (reader.GetInt32(5) / 100.0).ToString("C")
+                            };
+                            emprestimos.Add(emprestimo);
+                        }
+                    }
+                }
+            }
+            return emprestimos;
+        }
+
+
         public Emprestimo GetEmprestimoById(int emprestimoId)
         {
             using (SqliteConnection connection = new SqliteConnection(connectionString))
