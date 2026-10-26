@@ -55,8 +55,8 @@
             this.tableLayoutPanel1.Controls.Add(this.buttonVisualizarMultas, 1, 4);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(10);
-            this.tableLayoutPanel1.MaximumSize = new System.Drawing.Size(0, 800);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.tableLayoutPanel1.MaximumSize = new System.Drawing.Size(0, 650);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
@@ -66,7 +66,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1006, 673);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(754, 547);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // LabelLivros
@@ -74,10 +74,10 @@
             this.LabelLivros.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LabelLivros.AutoSize = true;
             this.LabelLivros.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold);
-            this.LabelLivros.Location = new System.Drawing.Point(169, 43);
-            this.LabelLivros.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.LabelLivros.Location = new System.Drawing.Point(122, 35);
+            this.LabelLivros.Margin = new System.Windows.Forms.Padding(2, 8, 2, 0);
             this.LabelLivros.Name = "LabelLivros";
-            this.LabelLivros.Size = new System.Drawing.Size(165, 58);
+            this.LabelLivros.Size = new System.Drawing.Size(132, 46);
             this.LabelLivros.TabIndex = 1;
             this.LabelLivros.Text = "Livros";
             this.LabelLivros.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -87,12 +87,12 @@
             this.buttonCadastrar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonCadastrar.AutoSize = true;
             this.buttonCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.buttonCadastrar.Location = new System.Drawing.Point(185, 176);
-            this.buttonCadastrar.Margin = new System.Windows.Forms.Padding(20);
-            this.buttonCadastrar.MaximumSize = new System.Drawing.Size(0, 800);
-            this.buttonCadastrar.MinimumSize = new System.Drawing.Size(0, 50);
+            this.buttonCadastrar.Location = new System.Drawing.Point(134, 143);
+            this.buttonCadastrar.Margin = new System.Windows.Forms.Padding(15, 16, 15, 16);
+            this.buttonCadastrar.MaximumSize = new System.Drawing.Size(0, 650);
+            this.buttonCadastrar.MinimumSize = new System.Drawing.Size(0, 41);
             this.buttonCadastrar.Name = "buttonCadastrar";
-            this.buttonCadastrar.Size = new System.Drawing.Size(133, 50);
+            this.buttonCadastrar.Size = new System.Drawing.Size(108, 41);
             this.buttonCadastrar.TabIndex = 2;
             this.buttonCadastrar.Text = "Cadastrar";
             this.buttonCadastrar.UseVisualStyleBackColor = true;
@@ -103,11 +103,11 @@
             this.buttonVisualizar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonVisualizar.AutoSize = true;
             this.buttonVisualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.buttonVisualizar.Location = new System.Drawing.Point(184, 310);
-            this.buttonVisualizar.Margin = new System.Windows.Forms.Padding(20);
-            this.buttonVisualizar.MinimumSize = new System.Drawing.Size(0, 50);
+            this.buttonVisualizar.Location = new System.Drawing.Point(135, 252);
+            this.buttonVisualizar.Margin = new System.Windows.Forms.Padding(15, 16, 15, 16);
+            this.buttonVisualizar.MinimumSize = new System.Drawing.Size(0, 41);
             this.buttonVisualizar.Name = "buttonVisualizar";
-            this.buttonVisualizar.Size = new System.Drawing.Size(134, 50);
+            this.buttonVisualizar.Size = new System.Drawing.Size(107, 41);
             this.buttonVisualizar.TabIndex = 3;
             this.buttonVisualizar.Text = "Visualizar";
             this.buttonVisualizar.UseVisualStyleBackColor = true;
@@ -118,10 +118,10 @@
             this.labelEmprestimo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelEmprestimo.AutoSize = true;
             this.labelEmprestimo.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold);
-            this.labelEmprestimo.Location = new System.Drawing.Point(603, 43);
-            this.labelEmprestimo.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.labelEmprestimo.Location = new System.Drawing.Point(444, 35);
+            this.labelEmprestimo.Margin = new System.Windows.Forms.Padding(2, 8, 2, 0);
             this.labelEmprestimo.Name = "labelEmprestimo";
-            this.labelEmprestimo.Size = new System.Drawing.Size(303, 58);
+            this.labelEmprestimo.Size = new System.Drawing.Size(243, 46);
             this.labelEmprestimo.TabIndex = 4;
             this.labelEmprestimo.Text = "Empréstimo";
             this.labelEmprestimo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -131,12 +131,12 @@
             this.buttonCadastrarEmprestimo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonCadastrarEmprestimo.AutoSize = true;
             this.buttonCadastrarEmprestimo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.buttonCadastrarEmprestimo.Location = new System.Drawing.Point(616, 176);
-            this.buttonCadastrarEmprestimo.Margin = new System.Windows.Forms.Padding(20);
-            this.buttonCadastrarEmprestimo.MaximumSize = new System.Drawing.Size(0, 800);
-            this.buttonCadastrarEmprestimo.MinimumSize = new System.Drawing.Size(0, 50);
+            this.buttonCadastrarEmprestimo.Location = new System.Drawing.Point(457, 143);
+            this.buttonCadastrarEmprestimo.Margin = new System.Windows.Forms.Padding(15, 16, 15, 16);
+            this.buttonCadastrarEmprestimo.MaximumSize = new System.Drawing.Size(0, 650);
+            this.buttonCadastrarEmprestimo.MinimumSize = new System.Drawing.Size(0, 41);
             this.buttonCadastrarEmprestimo.Name = "buttonCadastrarEmprestimo";
-            this.buttonCadastrarEmprestimo.Size = new System.Drawing.Size(277, 50);
+            this.buttonCadastrarEmprestimo.Size = new System.Drawing.Size(216, 41);
             this.buttonCadastrarEmprestimo.TabIndex = 5;
             this.buttonCadastrarEmprestimo.Text = "Cadastrar Empréstimo";
             this.buttonCadastrarEmprestimo.UseVisualStyleBackColor = true;
@@ -147,27 +147,28 @@
             this.buttonCadastrarDevolucao.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonCadastrarDevolucao.AutoSize = true;
             this.buttonCadastrarDevolucao.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.buttonCadastrarDevolucao.Location = new System.Drawing.Point(624, 310);
-            this.buttonCadastrarDevolucao.Margin = new System.Windows.Forms.Padding(20);
-            this.buttonCadastrarDevolucao.MaximumSize = new System.Drawing.Size(0, 800);
-            this.buttonCadastrarDevolucao.MinimumSize = new System.Drawing.Size(0, 50);
+            this.buttonCadastrarDevolucao.Location = new System.Drawing.Point(462, 252);
+            this.buttonCadastrarDevolucao.Margin = new System.Windows.Forms.Padding(15, 16, 15, 16);
+            this.buttonCadastrarDevolucao.MaximumSize = new System.Drawing.Size(0, 650);
+            this.buttonCadastrarDevolucao.MinimumSize = new System.Drawing.Size(0, 41);
             this.buttonCadastrarDevolucao.Name = "buttonCadastrarDevolucao";
-            this.buttonCadastrarDevolucao.Size = new System.Drawing.Size(260, 50);
+            this.buttonCadastrarDevolucao.Size = new System.Drawing.Size(206, 41);
             this.buttonCadastrarDevolucao.TabIndex = 6;
             this.buttonCadastrarDevolucao.Text = "Cadastrar Devolução";
             this.buttonCadastrarDevolucao.UseVisualStyleBackColor = true;
+            this.buttonCadastrarDevolucao.Click += new System.EventHandler(this.buttonCadastrarDevolucao_Click);
             // 
             // buttonVisualizarAtrasos
             // 
             this.buttonVisualizarAtrasos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonVisualizarAtrasos.AutoSize = true;
             this.buttonVisualizarAtrasos.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.buttonVisualizarAtrasos.Location = new System.Drawing.Point(641, 444);
-            this.buttonVisualizarAtrasos.Margin = new System.Windows.Forms.Padding(20);
-            this.buttonVisualizarAtrasos.MaximumSize = new System.Drawing.Size(0, 800);
-            this.buttonVisualizarAtrasos.MinimumSize = new System.Drawing.Size(0, 50);
+            this.buttonVisualizarAtrasos.Location = new System.Drawing.Point(476, 361);
+            this.buttonVisualizarAtrasos.Margin = new System.Windows.Forms.Padding(15, 16, 15, 16);
+            this.buttonVisualizarAtrasos.MaximumSize = new System.Drawing.Size(0, 650);
+            this.buttonVisualizarAtrasos.MinimumSize = new System.Drawing.Size(0, 41);
             this.buttonVisualizarAtrasos.Name = "buttonVisualizarAtrasos";
-            this.buttonVisualizarAtrasos.Size = new System.Drawing.Size(227, 50);
+            this.buttonVisualizarAtrasos.Size = new System.Drawing.Size(179, 41);
             this.buttonVisualizarAtrasos.TabIndex = 7;
             this.buttonVisualizarAtrasos.Text = "Visualizar Atrasos";
             this.buttonVisualizarAtrasos.UseVisualStyleBackColor = true;
@@ -177,23 +178,24 @@
             this.buttonVisualizarMultas.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonVisualizarMultas.AutoSize = true;
             this.buttonVisualizarMultas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.buttonVisualizarMultas.Location = new System.Drawing.Point(646, 579);
-            this.buttonVisualizarMultas.Margin = new System.Windows.Forms.Padding(20);
-            this.buttonVisualizarMultas.MaximumSize = new System.Drawing.Size(0, 800);
-            this.buttonVisualizarMultas.MinimumSize = new System.Drawing.Size(0, 50);
+            this.buttonVisualizarMultas.Location = new System.Drawing.Point(480, 471);
+            this.buttonVisualizarMultas.Margin = new System.Windows.Forms.Padding(15, 16, 15, 16);
+            this.buttonVisualizarMultas.MaximumSize = new System.Drawing.Size(0, 650);
+            this.buttonVisualizarMultas.MinimumSize = new System.Drawing.Size(0, 41);
             this.buttonVisualizarMultas.Name = "buttonVisualizarMultas";
-            this.buttonVisualizarMultas.Size = new System.Drawing.Size(216, 50);
+            this.buttonVisualizarMultas.Size = new System.Drawing.Size(170, 41);
             this.buttonVisualizarMultas.TabIndex = 8;
             this.buttonVisualizarMultas.Text = "Visualizar Multas";
             this.buttonVisualizarMultas.UseVisualStyleBackColor = true;
             // 
             // TelaPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1006, 673);
+            this.ClientSize = new System.Drawing.Size(754, 547);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.Name = "TelaPrincipal";
             this.Text = "Tela Principal";

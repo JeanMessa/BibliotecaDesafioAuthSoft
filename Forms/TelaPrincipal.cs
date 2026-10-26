@@ -49,5 +49,14 @@ namespace BibliotecaDesafioAuthSoft
                 this.Hide();
             }
         }
+
+        private void buttonCadastrarDevolucao_Click(object sender, EventArgs e)
+        {
+            using (FormCadastrarDevolucao formCadastrarDevolucao = new FormCadastrarDevolucao())
+            {
+                formCadastrarDevolucao.ShowDialog();
+                this.Hide();
+            }
+        }
     }
 }
