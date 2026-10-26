@@ -20,6 +20,6 @@ namespace BibliotecaDesafioAuthSoft.Models
 
         public DateTime? DataDevolucao { get; set; }
 
-        public int? MultaCentavos { get; set; }
+        public int MultaCentavos { get; set; } = 0;
     }
 }
