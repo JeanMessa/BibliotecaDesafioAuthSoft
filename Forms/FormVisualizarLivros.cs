@@ -42,7 +42,9 @@ namespace BibliotecaDesafioAuthSoft.Forms
         {
             try
             {
-                List<Livro> livros = _livroService.GetAllLivros();
+                string titulo = txtTitulo.Text;
+                string autor = txtAutor.Text;
+                List<Livro> livros = _livroService.GetLivrosByTituloAndAutor(titulo, autor);
                 dataGridViewLivros.DataSource = livros;
             }catch(Exception ex)
             {
@@ -109,6 +111,16 @@ namespace BibliotecaDesafioAuthSoft.Forms
             }
 
 
+        }
+
+        private void txtTitulo_TextChanged(object sender, EventArgs e)
+        {
+            LoadLivrosIntoGridView();
+        }
+
+        private void txtAutor_TextChanged(object sender, EventArgs e)
+        {
+            LoadLivrosIntoGridView();
         }
     }
 }
