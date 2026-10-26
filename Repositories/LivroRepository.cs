@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BibliotecaDesafioAuthSoft.Models;
-using Microsoft.Data.Sqlite;
+using System.Data.SQLite;
 
 namespace BibliotecaDesafioAuthSoft.Repositories
 {
@@ -13,7 +13,7 @@ namespace BibliotecaDesafioAuthSoft.Repositories
         private readonly string connectionString = @"Data Source=..\..\database\biblioteca.db;";
         public void Create(Livro livro)
         {
-            using (SqliteConnection connection = new SqliteConnection(connectionString))
+            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
             {
                 connection.Open();
 
@@ -22,7 +22,7 @@ namespace BibliotecaDesafioAuthSoft.Repositories
                     VALUES (@titulo, @autor, @ano, @exemplares);
                 ";
 
-                using (var command = new SqliteCommand(query, connection))
+                using (var command = new SQLiteCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@titulo", livro.Titulo);
                     command.Parameters.AddWithValue("@autor", livro.Autor);
@@ -38,15 +38,15 @@ namespace BibliotecaDesafioAuthSoft.Repositories
         {
             List<Livro> livros = new List<Livro>();
 
-            using (SqliteConnection connection = new SqliteConnection(connectionString))
+            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
             {
                 connection.Open();
 
                 string query = "SELECT id, titulo, autor, ano, exemplares FROM livro";
 
-                using (SqliteCommand command = new SqliteCommand(query, connection))
+                using (SQLiteCommand command = new SQLiteCommand(query, connection))
                 {
-                    using (SqliteDataReader reader = command.ExecuteReader())
+                    using (SQLiteDataReader reader = command.ExecuteReader())
                     {
                         while (reader.Read())
                         {
@@ -72,18 +72,18 @@ namespace BibliotecaDesafioAuthSoft.Repositories
         {
             List<Livro> livros = new List<Livro>();
 
-            using (SqliteConnection connection = new SqliteConnection(connectionString))
+            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
             {
                 connection.Open();
 
                 string query = "SELECT id, titulo, autor, ano, exemplares FROM livro WHERE titulo LIKE @titulo AND autor LIKE @autor;";
 
-                using (SqliteCommand command = new SqliteCommand(query, connection))
+                using (SQLiteCommand command = new SQLiteCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@titulo", $"%{titulo}%");
                     command.Parameters.AddWithValue("@autor", $"%{autor}%");
 
-                    using (SqliteDataReader reader = command.ExecuteReader())
+                    using (SQLiteDataReader reader = command.ExecuteReader())
                     {
                         while (reader.Read())
                         {
@@ -107,14 +107,14 @@ namespace BibliotecaDesafioAuthSoft.Repositories
 
         public Livro GetById(int id)
         {
-            using (SqliteConnection connection = new SqliteConnection(connectionString))
+            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
             {
                 connection.Open();
                 string query = "SELECT id, titulo, autor, ano, exemplares FROM livro WHERE id = @id";
-                using (SqliteCommand command = new SqliteCommand(query, connection))
+                using (SQLiteCommand command = new SQLiteCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@id", id);
-                    using (SqliteDataReader reader = command.ExecuteReader())
+                    using (SQLiteDataReader reader = command.ExecuteReader())
                     {
                         if (reader.Read())
                         {
@@ -135,7 +135,7 @@ namespace BibliotecaDesafioAuthSoft.Repositories
 
         public int GetExemplaresDisponiveis(int livroId)
         {
-            using (SqliteConnection connection = new SqliteConnection(connectionString))
+            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
             {
                 connection.Open();
                 string query = @"
@@ -147,7 +147,7 @@ namespace BibliotecaDesafioAuthSoft.Repositories
                     FROM livro l
                     WHERE l.id = @livroId;
                 ";
-                using (SqliteCommand command = new SqliteCommand(query, connection))
+                using (SQLiteCommand command = new SQLiteCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@livroId", livroId);
                     object result = command.ExecuteScalar();
@@ -160,7 +160,7 @@ namespace BibliotecaDesafioAuthSoft.Repositories
         {
             List<Livro> livros = new List<Livro>();
 
-            using (SqliteConnection connection = new SqliteConnection(connectionString))
+            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
             {
                 connection.Open();
 
@@ -174,9 +174,9 @@ namespace BibliotecaDesafioAuthSoft.Repositories
                     WHERE exemplares_disponiveis>0;
                 ";
 
-                using (SqliteCommand command = new SqliteCommand(query, connection))
+                using (SQLiteCommand command = new SQLiteCommand(query, connection))
                 {
-                    using (SqliteDataReader reader = command.ExecuteReader())
+                    using (SQLiteDataReader reader = command.ExecuteReader())
                     {
                         while (reader.Read())
                         {
@@ -200,7 +200,7 @@ namespace BibliotecaDesafioAuthSoft.Repositories
 
         public void Update(Livro livro)
         {
-            using (SqliteConnection connection = new SqliteConnection(connectionString))
+            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
             {
                 connection.Open();
                 string query = @"
@@ -208,7 +208,7 @@ namespace BibliotecaDesafioAuthSoft.Repositories
                     SET titulo = @titulo, autor = @autor, ano = @ano, exemplares = @exemplares 
                     WHERE id = @id;
                 ";
-                using (SqliteCommand command = new SqliteCommand(query, connection))
+                using (SQLiteCommand command = new SQLiteCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@titulo", livro.Titulo);
                     command.Parameters.AddWithValue("@autor", livro.Autor);
@@ -222,11 +222,11 @@ namespace BibliotecaDesafioAuthSoft.Repositories
 
         public void Delete(int id)
         {
-            using (SqliteConnection connection = new SqliteConnection(connectionString))
+            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
             {
                 connection.Open();
                 string query = "DELETE FROM livro WHERE id = @id";
-                using (SqliteCommand command = new SqliteCommand(query, connection))
+                using (SQLiteCommand command = new SQLiteCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@id", id);
                     command.ExecuteNonQuery();

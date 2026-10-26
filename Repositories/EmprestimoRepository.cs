@@ -1,7 +1,7 @@
 ﻿using BibliotecaDesafioAuthSoft.DTO;
 using BibliotecaDesafioAuthSoft.Models;
 using BibliotecaDesafioAuthSoft.ViewModel;
-using Microsoft.Data.Sqlite;
+using System.Data.SQLite;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,14 +16,14 @@ namespace BibliotecaDesafioAuthSoft.Repositories
 
         public void Create(Emprestimo emprestimo)
         {
-            using (var connection = new SqliteConnection(connectionString))
+            using (var connection = new SQLiteConnection(connectionString))
             {
                 connection.Open();
                 string query = @"
                     INSERT INTO emprestimo (livro_id, leitor, data_emprestimo, data_prevista,multa_centavos) 
                     VALUES (@livroId, @leitor, @dataEmprestimo, @dataPrevista, @multaCentavos);
                 ";
-                using (SqliteCommand command = new SqliteCommand(query, connection))
+                using (SQLiteCommand command = new SQLiteCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@livroId", emprestimo.LivroId);
                     command.Parameters.AddWithValue("@leitor", emprestimo.Leitor);
@@ -38,7 +38,7 @@ namespace BibliotecaDesafioAuthSoft.Repositories
         public List<EmprestimoAbertoDTO> GetEmprestimosEmAberto()
         {
             List<EmprestimoAbertoDTO> emprestimos = new List<EmprestimoAbertoDTO>();
-            using (SqliteConnection connection = new SqliteConnection(connectionString))
+            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
             {
                 connection.Open();
                 string query = @"
@@ -46,9 +46,9 @@ namespace BibliotecaDesafioAuthSoft.Repositories
                     FROM emprestimo e, livro l
                     WHERE e.livro_id = l.id AND e.data_devolucao IS NULL;
                 ";
-                using (SqliteCommand command = new SqliteCommand(query, connection))
+                using (SQLiteCommand command = new SQLiteCommand(query, connection))
                 {
-                    using (SqliteDataReader reader = command.ExecuteReader())
+                    using (SQLiteDataReader reader = command.ExecuteReader())
                     {
                         while (reader.Read())
                         {
@@ -71,7 +71,7 @@ namespace BibliotecaDesafioAuthSoft.Repositories
         public List<Emprestimo> GetEmprestimosEmAtraso()
         {
             List<Emprestimo> emprestimos = new List<Emprestimo>();
-            using (SqliteConnection connection = new SqliteConnection(connectionString))
+            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
             {
                 connection.Open();
                 string query = @"
@@ -79,9 +79,9 @@ namespace BibliotecaDesafioAuthSoft.Repositories
                     FROM emprestimo e
                     WHERE e.data_devolucao IS NULL AND e.data_prevista < Date('now');
                 ";
-                using (SqliteCommand command = new SqliteCommand(query, connection))
+                using (SQLiteCommand command = new SQLiteCommand(query, connection))
                 {
-                    using (SqliteDataReader reader = command.ExecuteReader())
+                    using (SQLiteDataReader reader = command.ExecuteReader())
                     {
                         while (reader.Read())
                         {
@@ -104,7 +104,7 @@ namespace BibliotecaDesafioAuthSoft.Repositories
         public List<EmprestimosMultaDTO> GetEmprestimosComMultaByDataDevolucao(DateTime dataDevolucao)
         {
             List<EmprestimosMultaDTO> emprestimos = new List<EmprestimosMultaDTO>();
-            using (SqliteConnection connection = new SqliteConnection(connectionString))
+            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
             {
                 connection.Open();
                 string query = @"
@@ -112,10 +112,10 @@ namespace BibliotecaDesafioAuthSoft.Repositories
                     FROM emprestimo e, livro l
                     WHERE e.livro_id = l.id AND e.data_prevista < Date('now') AND e.data_devolucao = @dataDevolucao;
                 ";
-                using (SqliteCommand command = new SqliteCommand(query, connection))
+                using (SQLiteCommand command = new SQLiteCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@dataDevolucao", dataDevolucao.ToString("yyyy-MM-dd"));
-                    using (SqliteDataReader reader = command.ExecuteReader())
+                    using (SQLiteDataReader reader = command.ExecuteReader())
                     {
                         while (reader.Read())
                         {
@@ -139,7 +139,7 @@ namespace BibliotecaDesafioAuthSoft.Repositories
 
         public Emprestimo GetEmprestimoById(int emprestimoId)
         {
-            using (SqliteConnection connection = new SqliteConnection(connectionString))
+            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
             {
                 connection.Open();
                 string query = @"
@@ -147,10 +147,10 @@ namespace BibliotecaDesafioAuthSoft.Repositories
                     FROM emprestimo
                     WHERE id = @id;
                 ";
-                using (SqliteCommand command = new SqliteCommand(query, connection))
+                using (SQLiteCommand command = new SQLiteCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@id", emprestimoId);
-                    using (SqliteDataReader reader = command.ExecuteReader())
+                    using (SQLiteDataReader reader = command.ExecuteReader())
                     {
                         if (reader.Read())
                         {
@@ -174,7 +174,7 @@ namespace BibliotecaDesafioAuthSoft.Repositories
 
         public void RegisterDevolucao(Emprestimo emprestimo)
         {
-            using (var connection = new SqliteConnection(connectionString))
+            using (var connection = new SQLiteConnection(connectionString))
             {
                 connection.Open();
                 string query = @"
@@ -182,7 +182,7 @@ namespace BibliotecaDesafioAuthSoft.Repositories
                     SET data_devolucao = @dataDevolucao, multa_centavos = @multaCentavos
                     WHERE id = @id;
                 ";
-                using (SqliteCommand command = new SqliteCommand(query, connection))
+                using (SQLiteCommand command = new SQLiteCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@dataDevolucao", emprestimo.DataDevolucao?.ToString("yyyy-MM-dd"));
                     command.Parameters.AddWithValue("@multaCentavos", emprestimo.MultaCentavos);
@@ -194,7 +194,7 @@ namespace BibliotecaDesafioAuthSoft.Repositories
 
         public bool IsLivroEmprestadoParaLeitor(int livroId, string leitor)
         {
-            using (SqliteConnection connection = new SqliteConnection(connectionString))
+            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
             {
                 connection.Open();
                 string query = @"
@@ -202,7 +202,7 @@ namespace BibliotecaDesafioAuthSoft.Repositories
                     FROM emprestimo 
                     WHERE livro_id = @livroId AND leitor = @leitor AND data_devolucao IS NULL;
                 ";
-                using (SqliteCommand command = new SqliteCommand(query, connection))
+                using (SQLiteCommand command = new SQLiteCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@livroId", livroId);
                     command.Parameters.AddWithValue("@leitor", leitor);
@@ -214,7 +214,7 @@ namespace BibliotecaDesafioAuthSoft.Repositories
 
         public int GetTotalMultaByDataDevolucao(DateTime dataDevolucao)
         {
-            using (SqliteConnection connection = new SqliteConnection(connectionString))
+            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
             {
                 connection.Open();
                 string query = @"
@@ -222,7 +222,7 @@ namespace BibliotecaDesafioAuthSoft.Repositories
                     FROM emprestimo 
                     WHERE data_prevista < Date('now') AND data_devolucao = @dataDevolucao;
                 ";
-                using (SqliteCommand command = new SqliteCommand(query, connection))
+                using (SQLiteCommand command = new SQLiteCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@dataDevolucao", dataDevolucao.ToString("yyyy-MM-dd"));
                     object result = command.ExecuteScalar();
