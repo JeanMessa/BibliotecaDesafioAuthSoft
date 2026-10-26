@@ -44,7 +44,7 @@ namespace BibliotecaDesafioAuthSoft.Forms
 
         private void LoadLivrosIntoGridView()
         {
-            List<Livro> livros = _livroService.GetAllLivros();
+            List<Livro> livros = _livroService.GetLivrosDisponiveis();
             dataGridViewLivros.DataSource = livros;
         }
 
@@ -79,6 +79,7 @@ namespace BibliotecaDesafioAuthSoft.Forms
                     MessageBox.Show("Empréstimo cadastrado com sucesso.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtLeitor.Clear();
                     dateEmprestimo.Value = dateEmprestimo.Value;
+                    LoadLivrosIntoGridView();
                 }
             }
         }

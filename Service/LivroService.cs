@@ -79,5 +79,10 @@ namespace BibliotecaDesafioAuthSoft.Service
         {
             return _repository.GetExemplaresDisponiveis(livroId);
         }
+
+        public List<Livro> GetLivrosDisponiveis()
+        {
+            return _repository.GetLivrosDisponiveis();
+        }
     }
 }

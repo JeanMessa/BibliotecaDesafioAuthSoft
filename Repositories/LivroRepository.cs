@@ -118,6 +118,49 @@ namespace BibliotecaDesafioAuthSoft.Repositories
                 }
             }
         }
+
+        public List<Livro> GetLivrosDisponiveis()
+        {
+            List<Livro> livros = new List<Livro>();
+
+            using (SqliteConnection connection = new SqliteConnection(connectionString))
+            {
+                connection.Open();
+
+                string query = @"
+                    SELECT l.id, l.titulo, l.autor, l.ano,l.exemplares - (
+                        SELECT COUNT(*) 
+                        FROM emprestimo e 
+                        WHERE e.livro_id = l.id AND e.data_devolucao IS NULL
+                    ) AS exemplares_disponiveis
+                    FROM livro l
+                    WHERE exemplares_disponiveis>0;
+                ";
+
+                using (SqliteCommand command = new SqliteCommand(query, connection))
+                {
+                    using (SqliteDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Livro livro = new Livro
+                            {
+                                Id = reader.GetInt32(0),
+                                Titulo = reader.GetString(1),
+                                Autor = reader.GetString(2),
+                                Ano = reader.GetInt32(3),
+                                Exemplares = reader.GetInt32(4)
+                            };
+
+                            livros.Add(livro);
+                        }
+                    }
+                }
+            }
+
+            return livros;
+        }
+
         public void Update(Livro livro)
         {
             using (SqliteConnection connection = new SqliteConnection(connectionString))
