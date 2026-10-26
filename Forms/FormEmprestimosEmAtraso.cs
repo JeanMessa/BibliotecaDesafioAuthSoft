@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BibliotecaDesafioAuthSoft.DTO;
+using BibliotecaDesafioAuthSoft.Service;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +22,7 @@ namespace BibliotecaDesafioAuthSoft.Forms
         private void FormEmprestimosEmAtraso_Load(object sender, EventArgs e)
         {
             AdjustGridViewColumns();
+            LoadEmprestimosEmAtraso();
         }
 
         private void AdjustGridViewColumns()
@@ -32,6 +35,13 @@ namespace BibliotecaDesafioAuthSoft.Forms
                 dataGridViewEmprestimo.Columns["DiasAtraso"].FillWeight = 120;
                 dataGridViewEmprestimo.Columns["MultaPrevista"].FillWeight = 120;
             }
+        }
+
+        private void LoadEmprestimosEmAtraso()
+        {
+            EmprestimoService emprestimoService = new EmprestimoService();
+            List<EmprestimosEmAtrasoDTO> emprestimosEmAtraso = emprestimoService.GetEmprestimosEmAtraso();
+            dataGridViewEmprestimo.DataSource = emprestimosEmAtraso;
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using BibliotecaDesafioAuthSoft.Models;
+﻿using BibliotecaDesafioAuthSoft.DTO;
+using BibliotecaDesafioAuthSoft.Models;
 using BibliotecaDesafioAuthSoft.ViewModel;
 using Microsoft.Data.Sqlite;
 using System;
@@ -65,6 +66,39 @@ namespace BibliotecaDesafioAuthSoft.Repositories
                 }
             }
             return emprestimos;
+        }
+
+        public List<Emprestimo> GetEmprestimosEmAtraso()
+        {
+            List<Emprestimo> emprestimos = new List<Emprestimo>();
+            using (SqliteConnection connection = new SqliteConnection(connectionString))
+            {
+                connection.Open();
+                string query = @"
+                    SELECT e.id, e.livro_id, e.leitor, e.data_prevista
+                    FROM emprestimo e
+                    WHERE e.data_devolucao IS NULL AND e.data_prevista < Date('now');
+                ";
+                using (SqliteCommand command = new SqliteCommand(query, connection))
+                {
+                    using (SqliteDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Emprestimo emprestimo = new Emprestimo
+                            {
+                                Id = reader.GetInt32(0),
+                                LivroId = reader.GetInt32(1),
+                                Leitor = reader.GetString(2),
+                                DataPrevista = reader.GetDateTime(3)
+                            };
+
+                            emprestimos.Add(emprestimo);
+                        }
+                    }
+                }
+            }
+            return emprestimos;  
         }
 
         public Emprestimo GetEmprestimoById(int emprestimoId)

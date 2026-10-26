@@ -1,4 +1,5 @@
-﻿using BibliotecaDesafioAuthSoft.Models;
+﻿using BibliotecaDesafioAuthSoft.DTO;
+using BibliotecaDesafioAuthSoft.Models;
 using BibliotecaDesafioAuthSoft.Repositories;
 using BibliotecaDesafioAuthSoft.Util;
 using BibliotecaDesafioAuthSoft.ViewModel;
@@ -88,6 +89,26 @@ namespace BibliotecaDesafioAuthSoft.Service
         private bool IsLivroEmprestadoParaLeitor(int livroId, string leitor)
         {
             return _repository.IsLivroEmprestadoParaLeitor(livroId, leitor);
+        }
+
+        public List<EmprestimosEmAtrasoDTO> GetEmprestimosEmAtraso()
+        {
+            List<Emprestimo> emprestimos = _repository.GetEmprestimosEmAtraso();
+            List<EmprestimosEmAtrasoDTO> dtos = new List<EmprestimosEmAtrasoDTO>();
+
+            foreach (Emprestimo emprestimo in emprestimos)
+            {
+                dtos.Add(new EmprestimosEmAtrasoDTO
+                {
+                    Id = emprestimo.Id,
+                    LivroTitulo = _livroService.GetLivroById(emprestimo.LivroId)?.Titulo,
+                    Leitor = emprestimo.Leitor,
+                    DiasAtraso = (DateTime.Now - emprestimo.DataPrevista).Days,
+                    MultaPrevista = ((float)UtilMulta.CalculateMulta(emprestimo.DataPrevista, DateTime.Now)/100).ToString("C")
+                });
+            }
+
+            return dtos;
         }
     }
 }
