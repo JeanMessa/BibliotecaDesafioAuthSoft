@@ -84,8 +84,15 @@ namespace BibliotecaDesafioAuthSoft.Forms
                 if (result == DialogResult.Yes)
                 {
                     int id = Convert.ToInt32(selectedRow.Cells["Id"].Value);
-                    _livroService.DeleteLivro(id);
-                    LoadLivrosIntoGridView();
+                    string error = _livroService.CheckErrorsAndDeleteLivro(id);
+                    if (!string.IsNullOrEmpty(error))
+                    {
+                        MessageBox.Show(error, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else
+                    {
+                        LoadLivrosIntoGridView();
+                    }
                 }
             }
             

@@ -70,14 +70,27 @@ namespace BibliotecaDesafioAuthSoft.Service
             return _repository.GetById(id);
         }
 
-        public void DeleteLivro(int id)
+        public string CheckErrorsAndDeleteLivro(int id)
         {
+            if(GetExemplaresEmprestados(id) > 0)
+            {
+               return "Não é possível excluir o livro, pois há exemplares emprestados.";
+            }
             _repository.Delete(id);
+
+            return String.Empty;
         }
 
         public int GetExemplaresDisponiveis(int livroId)
         {
             return _repository.GetExemplaresDisponiveis(livroId);
+        }
+
+        public int GetExemplaresEmprestados(int livroId)
+        {
+            Livro livro = _repository.GetById(livroId);
+            int exemplaresEmprestados = livro.Exemplares - _repository.GetExemplaresDisponiveis(livroId);
+            return exemplaresEmprestados;
         }
 
         public List<Livro> GetLivrosDisponiveis()
