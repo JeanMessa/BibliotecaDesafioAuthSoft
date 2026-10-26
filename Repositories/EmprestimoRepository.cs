@@ -18,8 +18,8 @@ namespace BibliotecaDesafioAuthSoft.Repositories
             {
                 connection.Open();
                 string query = @"
-                    INSERT INTO emprestimo (livro_id, leitor, data_emprestimo, data_prevista) 
-                    VALUES (@livroId, @leitor, @dataEmprestimo, @dataPrevista);
+                    INSERT INTO emprestimo (livro_id, leitor, data_emprestimo, data_prevista,multa_centavos) 
+                    VALUES (@livroId, @leitor, @dataEmprestimo, @dataPrevista, @multaCentavos);
                 ";
                 using (SqliteCommand command = new SqliteCommand(query, connection))
                 {
@@ -27,6 +27,7 @@ namespace BibliotecaDesafioAuthSoft.Repositories
                     command.Parameters.AddWithValue("@leitor", emprestimo.Leitor);
                     command.Parameters.AddWithValue("@dataEmprestimo", emprestimo.DataEmprestimo.ToString("yyyy-MM-dd"));
                     command.Parameters.AddWithValue("@dataPrevista", emprestimo.DataPrevista.ToString("yyyy-MM-dd"));
+                    command.Parameters.AddWithValue("@multaCentavos", emprestimo.MultaCentavos);
                     command.ExecuteNonQuery();
                 }
             }
