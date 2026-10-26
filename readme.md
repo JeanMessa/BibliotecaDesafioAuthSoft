@@ -3,7 +3,7 @@
 ##  Como Rodar o Projeto
 
 1. Certifique-se de ter o **.NET Framework 4.8** instalado na sua máquina (geralmente já vem nativo em versões recentes do Windows).
-2. Abra a pasta do projeto e localize o executável em: `bin/Debug/BibliotecaDesafioAuthSoft.exe` (ou abra a solução no Visual Studio e pressione o botão "Iniciar").
+2. Abra a pasta do projeto e localize o executável em: `bin/Debug/BibliotecaDesafioAuthSoft.exe`, ou abra a solução no Visual Studio e pressione o botão "Iniciar" se a bin/Debug não tiver sido gerada.
 
 ## Decisões técnicas
 
