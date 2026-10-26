@@ -44,8 +44,16 @@ namespace BibliotecaDesafioAuthSoft.Forms
 
         private void LoadLivrosIntoGridView()
         {
-            List<Livro> livros = _livroService.GetLivrosDisponiveis();
-            dataGridViewLivros.DataSource = livros;
+            try
+            {
+                List<Livro> livros = _livroService.GetLivrosDisponiveis();
+                dataGridViewLivros.DataSource = livros;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao carregar livros: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void buttonCancelar_Click(object sender, EventArgs e)
@@ -58,30 +66,38 @@ namespace BibliotecaDesafioAuthSoft.Forms
 
         private void ButtonSalvar_Click(object sender, EventArgs e)
         {
-            DataGridViewRow selectedRow = dataGridViewLivros.SelectedRows[0];
-            if (selectedRow == null)
+            try
             {
-                MessageBox.Show("Selecione um livro na tabela para emprestar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else
-            {
-                int idLivro = Convert.ToInt32(selectedRow.Cells["Id"].Value);
-                string leitor = txtLeitor.Text;
-                DateTime dataEmprestimo = dateEmprestimo.Value;
-                string error = _emprestimoService.CheckErrorsAndCreate(idLivro, leitor, dataEmprestimo);
-
-                if (!string.IsNullOrEmpty(error))
+                DataGridViewRow selectedRow = dataGridViewLivros.SelectedRows[0];
+                if (selectedRow == null)
                 {
-                    MessageBox.Show(error, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Selecione um livro na tabela para emprestar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
-                    MessageBox.Show("Empréstimo cadastrado com sucesso.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    txtLeitor.Clear();
-                    dateEmprestimo.Value = dateEmprestimo.Value;
-                    LoadLivrosIntoGridView();
+                    int idLivro = Convert.ToInt32(selectedRow.Cells["Id"].Value);
+                    string leitor = txtLeitor.Text;
+                    DateTime dataEmprestimo = dateEmprestimo.Value;
+                    string error = _emprestimoService.CheckErrorsAndCreate(idLivro, leitor, dataEmprestimo);
+
+                    if (!string.IsNullOrEmpty(error))
+                    {
+                        MessageBox.Show(error, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Empréstimo cadastrado com sucesso.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        txtLeitor.Clear();
+                        dateEmprestimo.Value = dateEmprestimo.Value;
+                        LoadLivrosIntoGridView();
+                    }
                 }
             }
+            catch(Exception ex)
+            {
+                MessageBox.Show($"Erro ao cadastrar empréstimo: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
     }
 }

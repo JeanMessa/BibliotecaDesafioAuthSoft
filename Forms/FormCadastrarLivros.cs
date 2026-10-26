@@ -38,42 +38,48 @@ namespace BibliotecaDesafioAuthSoft.Forms
 
         private void ButtonSalvar_Click(object sender, EventArgs e)
         {
-            Livro livro = new Livro
+            try
             {
-                Titulo = txtTitulo.Text,
-                Autor = txtAutor.Text,
-                Ano = (int)numAno.Value,
-                Exemplares = (int)numExemplares.Value
-            };
+                Livro livro = new Livro
+                {
+                    Titulo = txtTitulo.Text,
+                    Autor = txtAutor.Text,
+                    Ano = (int)numAno.Value,
+                    Exemplares = (int)numExemplares.Value
+                };
 
-            string error;
+                string error;
 
-            if (_idLivro == null)
-            {
-                error = _service.CheckErrorsAndCreate(livro);
-            }
-            else
-            {
-                livro.Id = _idLivro.Value;
-                error = _service.CheckErrorsAndEdit(livro);
-            }
-            
+                if (_idLivro == null)
+                {
+                    error = _service.CheckErrorsAndCreate(livro);
+                }
+                else
+                {
+                    livro.Id = _idLivro.Value;
+                    error = _service.CheckErrorsAndEdit(livro);
+                }
 
-            if (error != null && error != "")
-            {
-                MessageBox.Show(error, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else if(_idLivro == null)
-            {
-                MessageBox.Show("Livro cadastrado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                ClearFields();
-            }
-            else
-            {
-                MessageBox.Show("Livro editado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
-            }
 
+                if (error != null && error != "")
+                {
+                    MessageBox.Show(error, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (_idLivro == null)
+                {
+                    MessageBox.Show("Livro cadastrado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ClearFields();
+                }
+                else
+                {
+                    MessageBox.Show("Livro editado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show($"Erro ao salvar livro: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void ClearFields()
@@ -97,15 +103,22 @@ namespace BibliotecaDesafioAuthSoft.Forms
 
         private void LoadLivroToEdit(int id)
         {
-            Livro livro = _service.GetLivroById(id);
-
-            if (livro != null)
+            try
             {
-                txtTitulo.Text = livro.Titulo;
-                txtAutor.Text = livro.Autor;
-                numAno.Value = livro.Ano;
-                numExemplares.Value = livro.Exemplares;
+                Livro livro = _service.GetLivroById(id);
+
+                if (livro != null)
+                {
+                    txtTitulo.Text = livro.Titulo;
+                    txtAutor.Text = livro.Autor;
+                    numAno.Value = livro.Ano;
+                    numExemplares.Value = livro.Exemplares;
+                }
             }
+            catch {
+                MessageBox.Show("Erro ao carregar livro.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         private void ConfigLayoutToEdit()

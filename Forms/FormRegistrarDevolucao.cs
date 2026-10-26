@@ -42,8 +42,15 @@ namespace BibliotecaDesafioAuthSoft.Forms
 
         private void LoadEmprestimosEmAberto()
         {
-            List<EmprestimoAbertoDTO> emprestimosEmAberto = _emprestimoService.GetEmprestimosEmAberto();
-            dataGridViewEmprestimo.DataSource = emprestimosEmAberto;
+            try
+            {
+                List<EmprestimoAbertoDTO> emprestimosEmAberto = _emprestimoService.GetEmprestimosEmAberto();
+                dataGridViewEmprestimo.DataSource = emprestimosEmAberto;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao carregar empréstimos em aberto: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void buttonCancelar_Click(object sender, EventArgs e)
@@ -56,26 +63,34 @@ namespace BibliotecaDesafioAuthSoft.Forms
 
         private void ButtonRegistrar_Click(object sender, EventArgs e)
         {
-            if(dataGridViewEmprestimo.SelectedRows.Count > 0)
+            try
             {
-                int emprestimoId = Convert.ToInt32(dataGridViewEmprestimo.SelectedRows[0].Cells["Id"].Value);
-                DateTime dataDevolucao = dateDevolucao.Value;
 
-                String error = _emprestimoService.CheckErrorsAndRegistrarDevolucao(emprestimoId, dataDevolucao);
-                if (string.IsNullOrEmpty(error))
+                if (dataGridViewEmprestimo.SelectedRows.Count > 0)
                 {
-                    MessageBox.Show("Devolução registrada com sucesso.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LoadEmprestimosEmAberto();
+                    int emprestimoId = Convert.ToInt32(dataGridViewEmprestimo.SelectedRows[0].Cells["Id"].Value);
+                    DateTime dataDevolucao = dateDevolucao.Value;
+
+                    String error = _emprestimoService.CheckErrorsAndRegistrarDevolucao(emprestimoId, dataDevolucao);
+                    if (string.IsNullOrEmpty(error))
+                    {
+                        MessageBox.Show("Devolução registrada com sucesso.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LoadEmprestimosEmAberto();
+                    }
+                    else
+                    {
+                        MessageBox.Show(error, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+
                 }
                 else
                 {
-                    MessageBox.Show(error, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Por favor, selecione um empréstimo para registrar a devolução.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Por favor, selecione um empréstimo para registrar a devolução.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"Erro ao registrar devolução: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

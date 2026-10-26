@@ -39,9 +39,16 @@ namespace BibliotecaDesafioAuthSoft.Forms
 
         private void LoadEmprestimosEmAtraso()
         {
-            EmprestimoService emprestimoService = new EmprestimoService();
-            List<EmprestimosEmAtrasoDTO> emprestimosEmAtraso = emprestimoService.GetEmprestimosEmAtraso();
-            dataGridViewEmprestimo.DataSource = emprestimosEmAtraso;
+            try
+            {
+                EmprestimoService emprestimoService = new EmprestimoService();
+                List<EmprestimosEmAtrasoDTO> emprestimosEmAtraso = emprestimoService.GetEmprestimosEmAtraso();
+                dataGridViewEmprestimo.DataSource = emprestimosEmAtraso;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao carregar empréstimos em atraso: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void buttonVoltar_Click(object sender, EventArgs e)

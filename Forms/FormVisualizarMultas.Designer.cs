@@ -31,17 +31,17 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.LabelTitulo = new System.Windows.Forms.Label();
             this.dataGridViewEmprestimo = new System.Windows.Forms.DataGridView();
-            this.tableLayoutPanelData = new System.Windows.Forms.TableLayoutPanel();
-            this.labelData = new System.Windows.Forms.Label();
-            this.dateDevolucao = new System.Windows.Forms.DateTimePicker();
-            this.buttonVoltar = new System.Windows.Forms.Button();
-            this.labelMultaTotal = new System.Windows.Forms.Label();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Livro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Leitor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DevolucaoPrevista = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataDevolucao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Multa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tableLayoutPanelData = new System.Windows.Forms.TableLayoutPanel();
+            this.labelData = new System.Windows.Forms.Label();
+            this.dateDevolucao = new System.Windows.Forms.DateTimePicker();
+            this.labelMultaTotal = new System.Windows.Forms.Label();
+            this.buttonVoltar = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmprestimo)).BeginInit();
             this.tableLayoutPanelData.SuspendLayout();
@@ -110,81 +110,6 @@
             this.dataGridViewEmprestimo.Size = new System.Drawing.Size(724, 154);
             this.dataGridViewEmprestimo.TabIndex = 2;
             // 
-            // tableLayoutPanelData
-            // 
-            this.tableLayoutPanelData.ColumnCount = 2;
-            this.tableLayoutPanel1.SetColumnSpan(this.tableLayoutPanelData, 2);
-            this.tableLayoutPanelData.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelData.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelData.Controls.Add(this.labelData, 0, 0);
-            this.tableLayoutPanelData.Controls.Add(this.dateDevolucao, 1, 0);
-            this.tableLayoutPanelData.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelData.Location = new System.Drawing.Point(2, 81);
-            this.tableLayoutPanelData.Margin = new System.Windows.Forms.Padding(2, 2, 40, 2);
-            this.tableLayoutPanelData.Name = "tableLayoutPanelData";
-            this.tableLayoutPanelData.RowCount = 1;
-            this.tableLayoutPanelData.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelData.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 86F));
-            this.tableLayoutPanelData.Size = new System.Drawing.Size(758, 101);
-            this.tableLayoutPanelData.TabIndex = 6;
-            // 
-            // labelData
-            // 
-            this.labelData.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelData.AutoSize = true;
-            this.labelData.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.labelData.Location = new System.Drawing.Point(38, 31);
-            this.labelData.Margin = new System.Windows.Forms.Padding(38, 0, 19, 0);
-            this.labelData.Name = "labelData";
-            this.labelData.Size = new System.Drawing.Size(316, 39);
-            this.labelData.TabIndex = 2;
-            this.labelData.Text = "Data da Devolução:";
-            // 
-            // dateDevolucao
-            // 
-            this.dateDevolucao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateDevolucao.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.dateDevolucao.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateDevolucao.Location = new System.Drawing.Point(375, 28);
-            this.dateDevolucao.Margin = new System.Windows.Forms.Padding(2, 2, 38, 2);
-            this.dateDevolucao.MaximumSize = new System.Drawing.Size(226, 200);
-            this.dateDevolucao.Name = "dateDevolucao";
-            this.dateDevolucao.Size = new System.Drawing.Size(226, 45);
-            this.dateDevolucao.TabIndex = 3;
-            this.dateDevolucao.ValueChanged += new System.EventHandler(this.dateDevolucao_ValueChanged);
-            // 
-            // buttonVoltar
-            // 
-            this.buttonVoltar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonVoltar.AutoSize = true;
-            this.buttonVoltar.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.buttonVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.buttonVoltar.ForeColor = System.Drawing.Color.White;
-            this.buttonVoltar.Location = new System.Drawing.Point(509, 363);
-            this.buttonVoltar.Margin = new System.Windows.Forms.Padding(8, 20, 8, 20);
-            this.buttonVoltar.MaximumSize = new System.Drawing.Size(0, 65);
-            this.buttonVoltar.MinimumSize = new System.Drawing.Size(0, 65);
-            this.buttonVoltar.Name = "buttonVoltar";
-            this.buttonVoltar.Padding = new System.Windows.Forms.Padding(8);
-            this.buttonVoltar.Size = new System.Drawing.Size(182, 65);
-            this.buttonVoltar.TabIndex = 4;
-            this.buttonVoltar.Text = "Voltar";
-            this.buttonVoltar.UseVisualStyleBackColor = false;
-            this.buttonVoltar.Click += new System.EventHandler(this.buttonVoltar_Click);
-            // 
-            // labelMultaTotal
-            // 
-            this.labelMultaTotal.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelMultaTotal.AutoSize = true;
-            this.labelMultaTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.labelMultaTotal.Location = new System.Drawing.Point(38, 376);
-            this.labelMultaTotal.Margin = new System.Windows.Forms.Padding(38, 0, 19, 0);
-            this.labelMultaTotal.Name = "labelMultaTotal";
-            this.labelMultaTotal.Size = new System.Drawing.Size(194, 39);
-            this.labelMultaTotal.TabIndex = 4;
-            this.labelMultaTotal.Text = "Multa Total:";
-            // 
             // Id
             // 
             this.Id.DataPropertyName = "Id";
@@ -226,6 +151,81 @@
             this.Multa.HeaderText = "Multa";
             this.Multa.Name = "Multa";
             this.Multa.ReadOnly = true;
+            // 
+            // tableLayoutPanelData
+            // 
+            this.tableLayoutPanelData.ColumnCount = 2;
+            this.tableLayoutPanel1.SetColumnSpan(this.tableLayoutPanelData, 2);
+            this.tableLayoutPanelData.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanelData.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanelData.Controls.Add(this.labelData, 0, 0);
+            this.tableLayoutPanelData.Controls.Add(this.dateDevolucao, 1, 0);
+            this.tableLayoutPanelData.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanelData.Location = new System.Drawing.Point(2, 81);
+            this.tableLayoutPanelData.Margin = new System.Windows.Forms.Padding(2, 2, 40, 2);
+            this.tableLayoutPanelData.Name = "tableLayoutPanelData";
+            this.tableLayoutPanelData.RowCount = 1;
+            this.tableLayoutPanelData.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelData.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 101F));
+            this.tableLayoutPanelData.Size = new System.Drawing.Size(758, 101);
+            this.tableLayoutPanelData.TabIndex = 6;
+            // 
+            // labelData
+            // 
+            this.labelData.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelData.AutoSize = true;
+            this.labelData.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
+            this.labelData.Location = new System.Drawing.Point(38, 31);
+            this.labelData.Margin = new System.Windows.Forms.Padding(38, 0, 19, 0);
+            this.labelData.Name = "labelData";
+            this.labelData.Size = new System.Drawing.Size(316, 39);
+            this.labelData.TabIndex = 2;
+            this.labelData.Text = "Data da Devolução:";
+            // 
+            // dateDevolucao
+            // 
+            this.dateDevolucao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.dateDevolucao.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
+            this.dateDevolucao.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateDevolucao.Location = new System.Drawing.Point(375, 28);
+            this.dateDevolucao.Margin = new System.Windows.Forms.Padding(2, 2, 38, 2);
+            this.dateDevolucao.MaximumSize = new System.Drawing.Size(226, 200);
+            this.dateDevolucao.Name = "dateDevolucao";
+            this.dateDevolucao.Size = new System.Drawing.Size(226, 45);
+            this.dateDevolucao.TabIndex = 3;
+            this.dateDevolucao.ValueChanged += new System.EventHandler(this.dateDevolucao_ValueChanged);
+            // 
+            // labelMultaTotal
+            // 
+            this.labelMultaTotal.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelMultaTotal.AutoSize = true;
+            this.labelMultaTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
+            this.labelMultaTotal.Location = new System.Drawing.Point(38, 376);
+            this.labelMultaTotal.Margin = new System.Windows.Forms.Padding(38, 0, 19, 0);
+            this.labelMultaTotal.Name = "labelMultaTotal";
+            this.labelMultaTotal.Size = new System.Drawing.Size(194, 39);
+            this.labelMultaTotal.TabIndex = 4;
+            this.labelMultaTotal.Text = "Multa Total:";
+            // 
+            // buttonVoltar
+            // 
+            this.buttonVoltar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonVoltar.AutoSize = true;
+            this.buttonVoltar.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.buttonVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
+            this.buttonVoltar.ForeColor = System.Drawing.Color.White;
+            this.buttonVoltar.Location = new System.Drawing.Point(533, 363);
+            this.buttonVoltar.Margin = new System.Windows.Forms.Padding(8, 20, 8, 20);
+            this.buttonVoltar.MaximumSize = new System.Drawing.Size(0, 65);
+            this.buttonVoltar.MinimumSize = new System.Drawing.Size(0, 65);
+            this.buttonVoltar.Name = "buttonVoltar";
+            this.buttonVoltar.Padding = new System.Windows.Forms.Padding(8);
+            this.buttonVoltar.Size = new System.Drawing.Size(134, 65);
+            this.buttonVoltar.TabIndex = 4;
+            this.buttonVoltar.Text = "Voltar";
+            this.buttonVoltar.UseVisualStyleBackColor = false;
+            this.buttonVoltar.Click += new System.EventHandler(this.buttonVoltar_Click);
             // 
             // FormVisualizarMultas
             // 

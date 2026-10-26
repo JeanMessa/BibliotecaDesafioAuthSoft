@@ -51,10 +51,11 @@
             this.tableLayoutPanel1.SetColumnSpan(this.LabelTitulo, 2);
             this.LabelTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.LabelTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F, System.Drawing.FontStyle.Bold);
-            this.LabelTitulo.Location = new System.Drawing.Point(3, 0);
+            this.LabelTitulo.Location = new System.Drawing.Point(2, 0);
+            this.LabelTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LabelTitulo.Name = "LabelTitulo";
-            this.LabelTitulo.Padding = new System.Windows.Forms.Padding(11, 10, 11, 10);
-            this.LabelTitulo.Size = new System.Drawing.Size(882, 99);
+            this.LabelTitulo.Padding = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.LabelTitulo.Size = new System.Drawing.Size(680, 80);
             this.LabelTitulo.TabIndex = 0;
             this.LabelTitulo.Text = "Cadastrar Livros";
             this.LabelTitulo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -77,7 +78,7 @@
             this.tableLayoutPanel1.Controls.Add(this.buttonCancelar, 1, 5);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 6;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
@@ -86,17 +87,17 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 622);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(600, 505);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // LabelTítuloLivro
             // 
             this.LabelTítuloLivro.AutoSize = true;
             this.LabelTítuloLivro.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.LabelTítuloLivro.Location = new System.Drawing.Point(100, 124);
-            this.LabelTítuloLivro.Margin = new System.Windows.Forms.Padding(100, 25, 25, 25);
+            this.LabelTítuloLivro.Location = new System.Drawing.Point(75, 100);
+            this.LabelTítuloLivro.Margin = new System.Windows.Forms.Padding(75, 20, 19, 20);
             this.LabelTítuloLivro.Name = "LabelTítuloLivro";
-            this.LabelTítuloLivro.Size = new System.Drawing.Size(136, 48);
+            this.LabelTítuloLivro.Size = new System.Drawing.Size(110, 39);
             this.LabelTítuloLivro.TabIndex = 1;
             this.LabelTítuloLivro.Text = "Título:";
             // 
@@ -104,20 +105,20 @@
             // 
             this.txtTitulo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.txtTitulo.Location = new System.Drawing.Point(403, 124);
-            this.txtTitulo.Margin = new System.Windows.Forms.Padding(25, 25, 100, 25);
+            this.txtTitulo.Location = new System.Drawing.Point(319, 100);
+            this.txtTitulo.Margin = new System.Windows.Forms.Padding(19, 20, 75, 20);
             this.txtTitulo.Name = "txtTitulo";
-            this.txtTitulo.Size = new System.Drawing.Size(385, 55);
+            this.txtTitulo.Size = new System.Drawing.Size(290, 45);
             this.txtTitulo.TabIndex = 2;
             // 
             // LabelAutor
             // 
             this.LabelAutor.AutoSize = true;
             this.LabelAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.LabelAutor.Location = new System.Drawing.Point(100, 223);
-            this.LabelAutor.Margin = new System.Windows.Forms.Padding(100, 25, 25, 25);
+            this.LabelAutor.Location = new System.Drawing.Point(75, 180);
+            this.LabelAutor.Margin = new System.Windows.Forms.Padding(75, 20, 19, 20);
             this.LabelAutor.Name = "LabelAutor";
-            this.LabelAutor.Size = new System.Drawing.Size(132, 48);
+            this.LabelAutor.Size = new System.Drawing.Size(107, 39);
             this.LabelAutor.TabIndex = 3;
             this.LabelAutor.Text = "Autor:";
             // 
@@ -125,28 +126,28 @@
             // 
             this.txtAutor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.txtAutor.Location = new System.Drawing.Point(403, 223);
-            this.txtAutor.Margin = new System.Windows.Forms.Padding(25, 25, 100, 25);
+            this.txtAutor.Location = new System.Drawing.Point(319, 180);
+            this.txtAutor.Margin = new System.Windows.Forms.Padding(19, 20, 75, 20);
             this.txtAutor.Name = "txtAutor";
-            this.txtAutor.Size = new System.Drawing.Size(385, 55);
+            this.txtAutor.Size = new System.Drawing.Size(290, 45);
             this.txtAutor.TabIndex = 4;
             // 
             // LabelAno
             // 
             this.LabelAno.AutoSize = true;
             this.LabelAno.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.LabelAno.Location = new System.Drawing.Point(100, 322);
-            this.LabelAno.Margin = new System.Windows.Forms.Padding(100, 25, 25, 25);
+            this.LabelAno.Location = new System.Drawing.Point(75, 260);
+            this.LabelAno.Margin = new System.Windows.Forms.Padding(75, 20, 19, 20);
             this.LabelAno.Name = "LabelAno";
-            this.LabelAno.Size = new System.Drawing.Size(106, 48);
+            this.LabelAno.Size = new System.Drawing.Size(87, 39);
             this.LabelAno.TabIndex = 5;
             this.LabelAno.Text = "Ano:";
             // 
             // numAno
             // 
             this.numAno.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.numAno.Location = new System.Drawing.Point(403, 322);
-            this.numAno.Margin = new System.Windows.Forms.Padding(25, 25, 100, 25);
+            this.numAno.Location = new System.Drawing.Point(319, 260);
+            this.numAno.Margin = new System.Windows.Forms.Padding(19, 20, 75, 20);
             this.numAno.Maximum = new decimal(new int[] {
             2026,
             0,
@@ -158,7 +159,7 @@
             0,
             0});
             this.numAno.Name = "numAno";
-            this.numAno.Size = new System.Drawing.Size(120, 55);
+            this.numAno.Size = new System.Drawing.Size(90, 45);
             this.numAno.TabIndex = 6;
             this.numAno.Value = new decimal(new int[] {
             2026,
@@ -170,18 +171,18 @@
             // 
             this.LabelExemplares.AutoSize = true;
             this.LabelExemplares.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.LabelExemplares.Location = new System.Drawing.Point(100, 421);
-            this.LabelExemplares.Margin = new System.Windows.Forms.Padding(100, 25, 25, 25);
+            this.LabelExemplares.Location = new System.Drawing.Point(75, 340);
+            this.LabelExemplares.Margin = new System.Windows.Forms.Padding(75, 20, 19, 20);
             this.LabelExemplares.Name = "LabelExemplares";
-            this.LabelExemplares.Size = new System.Drawing.Size(253, 48);
+            this.LabelExemplares.Size = new System.Drawing.Size(206, 39);
             this.LabelExemplares.TabIndex = 7;
             this.LabelExemplares.Text = "Exemplares:";
             // 
             // numExemplares
             // 
             this.numExemplares.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.numExemplares.Location = new System.Drawing.Point(403, 421);
-            this.numExemplares.Margin = new System.Windows.Forms.Padding(25, 25, 100, 25);
+            this.numExemplares.Location = new System.Drawing.Point(319, 340);
+            this.numExemplares.Margin = new System.Windows.Forms.Padding(19, 20, 75, 20);
             this.numExemplares.Maximum = new decimal(new int[] {
             99,
             0,
@@ -193,7 +194,7 @@
             0,
             0});
             this.numExemplares.Name = "numExemplares";
-            this.numExemplares.Size = new System.Drawing.Size(120, 55);
+            this.numExemplares.Size = new System.Drawing.Size(90, 45);
             this.numExemplares.TabIndex = 8;
             this.numExemplares.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numExemplares.Value = new decimal(new int[] {
@@ -211,12 +212,12 @@
             this.ButtonSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
             this.ButtonSalvar.ForeColor = System.Drawing.Color.White;
-            this.ButtonSalvar.Location = new System.Drawing.Point(100, 520);
-            this.ButtonSalvar.Margin = new System.Windows.Forms.Padding(100, 25, 100, 25);
-            this.ButtonSalvar.MaximumSize = new System.Drawing.Size(0, 80);
+            this.ButtonSalvar.Location = new System.Drawing.Point(75, 420);
+            this.ButtonSalvar.Margin = new System.Windows.Forms.Padding(75, 20, 75, 20);
+            this.ButtonSalvar.MaximumSize = new System.Drawing.Size(0, 65);
             this.ButtonSalvar.Name = "ButtonSalvar";
-            this.ButtonSalvar.Padding = new System.Windows.Forms.Padding(11, 10, 11, 10);
-            this.ButtonSalvar.Size = new System.Drawing.Size(173, 77);
+            this.ButtonSalvar.Padding = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.ButtonSalvar.Size = new System.Drawing.Size(142, 65);
             this.ButtonSalvar.TabIndex = 2;
             this.ButtonSalvar.Text = "Salvar";
             this.ButtonSalvar.UseVisualStyleBackColor = false;
@@ -231,12 +232,12 @@
             this.buttonCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
             this.buttonCancelar.ForeColor = System.Drawing.Color.White;
-            this.buttonCancelar.Location = new System.Drawing.Point(467, 520);
-            this.buttonCancelar.Margin = new System.Windows.Forms.Padding(25, 25, 200, 25);
-            this.buttonCancelar.MaximumSize = new System.Drawing.Size(0, 80);
+            this.buttonCancelar.Location = new System.Drawing.Point(352, 420);
+            this.buttonCancelar.Margin = new System.Windows.Forms.Padding(19, 20, 150, 20);
+            this.buttonCancelar.MaximumSize = new System.Drawing.Size(0, 65);
             this.buttonCancelar.Name = "buttonCancelar";
-            this.buttonCancelar.Padding = new System.Windows.Forms.Padding(11, 10, 11, 10);
-            this.buttonCancelar.Size = new System.Drawing.Size(221, 77);
+            this.buttonCancelar.Padding = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.buttonCancelar.Size = new System.Drawing.Size(182, 65);
             this.buttonCancelar.TabIndex = 9;
             this.buttonCancelar.Text = "Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = false;
@@ -244,11 +245,11 @@
             // 
             // FormCadastrarLivros
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 622);
+            this.ClientSize = new System.Drawing.Size(600, 505);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormCadastrarLivros";
             this.Text = "Cadastrar Livros";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

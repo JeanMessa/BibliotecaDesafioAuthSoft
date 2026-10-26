@@ -40,8 +40,14 @@ namespace BibliotecaDesafioAuthSoft.Forms
 
         private void LoadLivrosIntoGridView()
         {
-            List<Livro> livros = _livroService.GetAllLivros();
-            dataGridViewLivros.DataSource = livros;
+            try
+            {
+                List<Livro> livros = _livroService.GetAllLivros();
+                dataGridViewLivros.DataSource = livros;
+            }catch(Exception ex)
+            {
+                MessageBox.Show($"Ocorreu um erro ao carregar os livros: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void buttonCancelar_Click(object sender, EventArgs e)
@@ -73,29 +79,36 @@ namespace BibliotecaDesafioAuthSoft.Forms
 
         private void buttonExcluir_Click(object sender, EventArgs e)
         {
-            DataGridViewRow selectedRow = dataGridViewLivros.SelectedRows[0];
-            if (selectedRow == null)
+            try
             {
-                MessageBox.Show("Selecione um livro na tabela para editar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else
-            {
-                DialogResult result = MessageBox.Show("Tem certeza que deseja excluir o livro selecionado?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (result == DialogResult.Yes)
+                DataGridViewRow selectedRow = dataGridViewLivros.SelectedRows[0];
+                if (selectedRow == null)
                 {
-                    int id = Convert.ToInt32(selectedRow.Cells["Id"].Value);
-                    string error = _livroService.CheckErrorsAndDeleteLivro(id);
-                    if (!string.IsNullOrEmpty(error))
+                    MessageBox.Show("Selecione um livro na tabela para editar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    DialogResult result = MessageBox.Show("Tem certeza que deseja excluir o livro selecionado?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (result == DialogResult.Yes)
                     {
-                        MessageBox.Show(error, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-                    else
-                    {
-                        LoadLivrosIntoGridView();
+                        int id = Convert.ToInt32(selectedRow.Cells["Id"].Value);
+                        string error = _livroService.CheckErrorsAndDeleteLivro(id);
+                        if (!string.IsNullOrEmpty(error))
+                        {
+                            MessageBox.Show(error, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                        else
+                        {
+                            LoadLivrosIntoGridView();
+                        }
                     }
                 }
+            }catch(Exception ex)
+            {
+                MessageBox.Show($"Ocorreu um erro ao excluir o livro: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+
+
         }
     }
 }

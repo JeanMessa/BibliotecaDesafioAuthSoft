@@ -31,12 +31,12 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.LabelTitulo = new System.Windows.Forms.Label();
             this.dataGridViewEmprestimo = new System.Windows.Forms.DataGridView();
-            this.buttonVoltar = new System.Windows.Forms.Button();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Livro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Leitor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DiasAtraso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MultaPrevista = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonVoltar = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmprestimo)).BeginInit();
             this.SuspendLayout();
@@ -101,26 +101,6 @@
             this.dataGridViewEmprestimo.Size = new System.Drawing.Size(724, 266);
             this.dataGridViewEmprestimo.TabIndex = 2;
             // 
-            // buttonVoltar
-            // 
-            this.buttonVoltar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonVoltar.AutoSize = true;
-            this.buttonVoltar.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.buttonVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.buttonVoltar.ForeColor = System.Drawing.Color.White;
-            this.buttonVoltar.Location = new System.Drawing.Point(509, 380);
-            this.buttonVoltar.Margin = new System.Windows.Forms.Padding(8, 20, 8, 20);
-            this.buttonVoltar.MaximumSize = new System.Drawing.Size(0, 65);
-            this.buttonVoltar.MinimumSize = new System.Drawing.Size(0, 65);
-            this.buttonVoltar.Name = "buttonVoltar";
-            this.buttonVoltar.Padding = new System.Windows.Forms.Padding(8);
-            this.buttonVoltar.Size = new System.Drawing.Size(182, 65);
-            this.buttonVoltar.TabIndex = 4;
-            this.buttonVoltar.Text = "Voltar";
-            this.buttonVoltar.UseVisualStyleBackColor = false;
-            this.buttonVoltar.Click += new System.EventHandler(this.buttonVoltar_Click);
-            // 
             // Id
             // 
             this.Id.DataPropertyName = "Id";
@@ -155,6 +135,26 @@
             this.MultaPrevista.HeaderText = "Multa Prevista";
             this.MultaPrevista.Name = "MultaPrevista";
             this.MultaPrevista.ReadOnly = true;
+            // 
+            // buttonVoltar
+            // 
+            this.buttonVoltar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonVoltar.AutoSize = true;
+            this.buttonVoltar.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.buttonVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
+            this.buttonVoltar.ForeColor = System.Drawing.Color.White;
+            this.buttonVoltar.Location = new System.Drawing.Point(533, 380);
+            this.buttonVoltar.Margin = new System.Windows.Forms.Padding(8, 20, 8, 20);
+            this.buttonVoltar.MaximumSize = new System.Drawing.Size(0, 65);
+            this.buttonVoltar.MinimumSize = new System.Drawing.Size(0, 65);
+            this.buttonVoltar.Name = "buttonVoltar";
+            this.buttonVoltar.Padding = new System.Windows.Forms.Padding(8);
+            this.buttonVoltar.Size = new System.Drawing.Size(134, 65);
+            this.buttonVoltar.TabIndex = 4;
+            this.buttonVoltar.Text = "Voltar";
+            this.buttonVoltar.UseVisualStyleBackColor = false;
+            this.buttonVoltar.Click += new System.EventHandler(this.buttonVoltar_Click);
             // 
             // FormEmprestimosEmAtraso
             // 

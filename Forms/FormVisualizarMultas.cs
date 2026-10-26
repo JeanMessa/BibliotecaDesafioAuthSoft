@@ -43,9 +43,15 @@ namespace BibliotecaDesafioAuthSoft.Forms
 
         private void LoadEmprestimosIntoGridView()
         {
-            DateTime dateTimeDevolucao = dateDevolucao.Value.Date;
-            List<EmprestimosMultaDTO> emprestimos = _emprestimoService.GetEmprestimosComMulta(dateTimeDevolucao);
-            dataGridViewEmprestimo.DataSource = emprestimos;
+            try {
+                DateTime dateTimeDevolucao = dateDevolucao.Value.Date;
+                List<EmprestimosMultaDTO> emprestimos = _emprestimoService.GetEmprestimosComMulta(dateTimeDevolucao);
+                dataGridViewEmprestimo.DataSource = emprestimos;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao carregar empréstimos com multa: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
             UpdateMultaTotal();
         }
@@ -57,7 +63,14 @@ namespace BibliotecaDesafioAuthSoft.Forms
 
         private void UpdateMultaTotal()
         {
-            labelMultaTotal.Text = $"Multa Total: {_emprestimoService.GetMultaTotalByDataDevolucao(dateDevolucao.Value.Date)}";
+            try
+            {
+                labelMultaTotal.Text = $"Multa Total: {_emprestimoService.GetMultaTotalByDataDevolucao(dateDevolucao.Value.Date)}";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao calcular multa total: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void buttonVoltar_Click(object sender, EventArgs e)
