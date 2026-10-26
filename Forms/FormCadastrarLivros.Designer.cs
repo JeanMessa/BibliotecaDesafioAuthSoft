@@ -54,7 +54,7 @@
             this.LabelTitulo.Location = new System.Drawing.Point(2, 0);
             this.LabelTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LabelTitulo.Name = "LabelTitulo";
-            this.LabelTitulo.Padding = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.LabelTitulo.Padding = new System.Windows.Forms.Padding(8);
             this.LabelTitulo.Size = new System.Drawing.Size(680, 80);
             this.LabelTitulo.TabIndex = 0;
             this.LabelTitulo.Text = "Cadastrar Livros";
@@ -78,7 +78,7 @@
             this.tableLayoutPanel1.Controls.Add(this.buttonCancelar, 1, 5);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 6;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
@@ -216,7 +216,7 @@
             this.ButtonSalvar.Margin = new System.Windows.Forms.Padding(75, 20, 75, 20);
             this.ButtonSalvar.MaximumSize = new System.Drawing.Size(0, 65);
             this.ButtonSalvar.Name = "ButtonSalvar";
-            this.ButtonSalvar.Padding = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.ButtonSalvar.Padding = new System.Windows.Forms.Padding(8);
             this.ButtonSalvar.Size = new System.Drawing.Size(142, 65);
             this.ButtonSalvar.TabIndex = 2;
             this.ButtonSalvar.Text = "Salvar";
@@ -236,7 +236,7 @@
             this.buttonCancelar.Margin = new System.Windows.Forms.Padding(19, 20, 150, 20);
             this.buttonCancelar.MaximumSize = new System.Drawing.Size(0, 65);
             this.buttonCancelar.Name = "buttonCancelar";
-            this.buttonCancelar.Padding = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.buttonCancelar.Padding = new System.Windows.Forms.Padding(8);
             this.buttonCancelar.Size = new System.Drawing.Size(182, 65);
             this.buttonCancelar.TabIndex = 9;
             this.buttonCancelar.Text = "Cancelar";
@@ -249,7 +249,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 505);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormCadastrarLivros";
             this.Text = "Cadastrar Livros";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
