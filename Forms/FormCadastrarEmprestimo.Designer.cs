@@ -296,7 +296,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormCadastrarEmprestimo";
-            this.Text = "FormCadastrarEmprestimo";
+            this.Text = "Cadastrar Empréstimo";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormCadastrarEmprestimo_Load);
             this.tableLayoutPanel1.ResumeLayout(false);

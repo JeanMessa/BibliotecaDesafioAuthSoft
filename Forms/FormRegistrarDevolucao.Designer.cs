@@ -249,7 +249,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "FormRegistrarDevolucao";
-            this.Text = "FormCadastrarDevolução";
+            this.Text = "Registrar Devolução";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormRegistrarDevolução_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
