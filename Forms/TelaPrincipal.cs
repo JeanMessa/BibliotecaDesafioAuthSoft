@@ -67,5 +67,14 @@ namespace BibliotecaDesafioAuthSoft
                 this.Hide();
             }
         }
+
+        private void buttonVisualizarMultas_Click(object sender, EventArgs e)
+        {
+            using (FormVisualizarMultas formVisualizarMultas = new FormVisualizarMultas())
+            {
+                formVisualizarMultas.ShowDialog();
+                this.Hide();
+            }
+        }
     }
 }

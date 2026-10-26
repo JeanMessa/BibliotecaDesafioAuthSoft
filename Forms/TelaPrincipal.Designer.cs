@@ -188,6 +188,7 @@
             this.buttonVisualizarMultas.TabIndex = 8;
             this.buttonVisualizarMultas.Text = "Visualizar Multas";
             this.buttonVisualizarMultas.UseVisualStyleBackColor = true;
+            this.buttonVisualizarMultas.Click += new System.EventHandler(this.buttonVisualizarMultas_Click);
             // 
             // TelaPrincipal
             // 
