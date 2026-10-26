@@ -63,14 +63,15 @@
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanelData, 1, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 450);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(600, 366);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
             // LabelTitulo
@@ -79,10 +80,11 @@
             this.tableLayoutPanel1.SetColumnSpan(this.LabelTitulo, 2);
             this.LabelTitulo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.LabelTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Bold);
-            this.LabelTitulo.Location = new System.Drawing.Point(3, 0);
+            this.LabelTitulo.Location = new System.Drawing.Point(2, 0);
+            this.LabelTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LabelTitulo.Name = "LabelTitulo";
-            this.LabelTitulo.Padding = new System.Windows.Forms.Padding(11, 10, 11, 10);
-            this.LabelTitulo.Size = new System.Drawing.Size(794, 86);
+            this.LabelTitulo.Padding = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.LabelTitulo.Size = new System.Drawing.Size(596, 70);
             this.LabelTitulo.TabIndex = 1;
             this.LabelTitulo.Text = "Cadastar Empréstimo";
             this.LabelTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -99,15 +101,15 @@
             this.Exemplares});
             this.tableLayoutPanel1.SetColumnSpan(this.dataGridViewLivros, 2);
             this.dataGridViewLivros.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridViewLivros.Location = new System.Drawing.Point(50, 89);
-            this.dataGridViewLivros.Margin = new System.Windows.Forms.Padding(50, 3, 50, 3);
+            this.dataGridViewLivros.Location = new System.Drawing.Point(38, 72);
+            this.dataGridViewLivros.Margin = new System.Windows.Forms.Padding(38, 2, 38, 2);
             this.dataGridViewLivros.MultiSelect = false;
             this.dataGridViewLivros.Name = "dataGridViewLivros";
             this.dataGridViewLivros.RowHeadersVisible = false;
             this.dataGridViewLivros.RowHeadersWidth = 51;
             this.dataGridViewLivros.RowTemplate.Height = 24;
             this.dataGridViewLivros.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewLivros.Size = new System.Drawing.Size(700, 166);
+            this.dataGridViewLivros.Size = new System.Drawing.Size(524, 136);
             this.dataGridViewLivros.TabIndex = 2;
             // 
             // Id
@@ -158,16 +160,17 @@
             this.ButtonSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
             this.ButtonSalvar.ForeColor = System.Drawing.Color.White;
-            this.ButtonSalvar.Location = new System.Drawing.Point(113, 369);
-            this.ButtonSalvar.Margin = new System.Windows.Forms.Padding(10, 25, 10, 25);
-            this.ButtonSalvar.MaximumSize = new System.Drawing.Size(0, 80);
-            this.ButtonSalvar.MinimumSize = new System.Drawing.Size(0, 80);
+            this.ButtonSalvar.Location = new System.Drawing.Point(79, 300);
+            this.ButtonSalvar.Margin = new System.Windows.Forms.Padding(8, 20, 8, 20);
+            this.ButtonSalvar.MaximumSize = new System.Drawing.Size(0, 65);
+            this.ButtonSalvar.MinimumSize = new System.Drawing.Size(0, 65);
             this.ButtonSalvar.Name = "ButtonSalvar";
-            this.ButtonSalvar.Padding = new System.Windows.Forms.Padding(11, 10, 11, 10);
-            this.ButtonSalvar.Size = new System.Drawing.Size(173, 80);
+            this.ButtonSalvar.Padding = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.ButtonSalvar.Size = new System.Drawing.Size(142, 65);
             this.ButtonSalvar.TabIndex = 3;
             this.ButtonSalvar.Text = "Salvar";
             this.ButtonSalvar.UseVisualStyleBackColor = false;
+            this.ButtonSalvar.Click += new System.EventHandler(this.ButtonSalvar_Click);
             // 
             // buttonCancelar
             // 
@@ -177,13 +180,13 @@
             this.buttonCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
             this.buttonCancelar.ForeColor = System.Drawing.Color.White;
-            this.buttonCancelar.Location = new System.Drawing.Point(489, 369);
-            this.buttonCancelar.Margin = new System.Windows.Forms.Padding(10, 25, 10, 25);
-            this.buttonCancelar.MaximumSize = new System.Drawing.Size(0, 80);
-            this.buttonCancelar.MinimumSize = new System.Drawing.Size(0, 80);
+            this.buttonCancelar.Location = new System.Drawing.Point(359, 300);
+            this.buttonCancelar.Margin = new System.Windows.Forms.Padding(8, 20, 8, 20);
+            this.buttonCancelar.MaximumSize = new System.Drawing.Size(0, 65);
+            this.buttonCancelar.MinimumSize = new System.Drawing.Size(0, 65);
             this.buttonCancelar.Name = "buttonCancelar";
-            this.buttonCancelar.Padding = new System.Windows.Forms.Padding(11, 10, 11, 10);
-            this.buttonCancelar.Size = new System.Drawing.Size(221, 80);
+            this.buttonCancelar.Padding = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.buttonCancelar.Size = new System.Drawing.Size(182, 65);
             this.buttonCancelar.TabIndex = 4;
             this.buttonCancelar.Text = "Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = false;
@@ -197,12 +200,13 @@
             this.tableLayoutPanelLeitor.Controls.Add(this.labelLeitor, 0, 0);
             this.tableLayoutPanelLeitor.Controls.Add(this.txtLeitor, 1, 0);
             this.tableLayoutPanelLeitor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelLeitor.Location = new System.Drawing.Point(3, 261);
+            this.tableLayoutPanelLeitor.Location = new System.Drawing.Point(2, 212);
+            this.tableLayoutPanelLeitor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanelLeitor.Name = "tableLayoutPanelLeitor";
             this.tableLayoutPanelLeitor.RowCount = 1;
             this.tableLayoutPanelLeitor.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelLeitor.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
-            this.tableLayoutPanelLeitor.Size = new System.Drawing.Size(394, 80);
+            this.tableLayoutPanelLeitor.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 65F));
+            this.tableLayoutPanelLeitor.Size = new System.Drawing.Size(296, 66);
             this.tableLayoutPanelLeitor.TabIndex = 5;
             // 
             // labelLeitor
@@ -210,10 +214,10 @@
             this.labelLeitor.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelLeitor.AutoSize = true;
             this.labelLeitor.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.labelLeitor.Location = new System.Drawing.Point(50, 16);
-            this.labelLeitor.Margin = new System.Windows.Forms.Padding(50, 0, 25, 0);
+            this.labelLeitor.Location = new System.Drawing.Point(38, 13);
+            this.labelLeitor.Margin = new System.Windows.Forms.Padding(38, 0, 19, 0);
             this.labelLeitor.Name = "labelLeitor";
-            this.labelLeitor.Size = new System.Drawing.Size(137, 48);
+            this.labelLeitor.Size = new System.Drawing.Size(111, 39);
             this.labelLeitor.TabIndex = 2;
             this.labelLeitor.Text = "Leitor:";
             // 
@@ -221,10 +225,10 @@
             // 
             this.txtLeitor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtLeitor.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.txtLeitor.Location = new System.Drawing.Point(215, 17);
-            this.txtLeitor.Margin = new System.Windows.Forms.Padding(3, 12, 3, 3);
+            this.txtLeitor.Location = new System.Drawing.Point(170, 14);
+            this.txtLeitor.Margin = new System.Windows.Forms.Padding(2, 10, 2, 2);
             this.txtLeitor.Name = "txtLeitor";
-            this.txtLeitor.Size = new System.Drawing.Size(177, 55);
+            this.txtLeitor.Size = new System.Drawing.Size(152, 45);
             this.txtLeitor.TabIndex = 3;
             // 
             // tableLayoutPanelData
@@ -235,13 +239,13 @@
             this.tableLayoutPanelData.Controls.Add(this.labelData, 0, 0);
             this.tableLayoutPanelData.Controls.Add(this.dateEmprestimo, 1, 0);
             this.tableLayoutPanelData.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelData.Location = new System.Drawing.Point(403, 261);
-            this.tableLayoutPanelData.Margin = new System.Windows.Forms.Padding(3, 3, 53, 3);
+            this.tableLayoutPanelData.Location = new System.Drawing.Point(302, 212);
+            this.tableLayoutPanelData.Margin = new System.Windows.Forms.Padding(2, 2, 40, 2);
             this.tableLayoutPanelData.Name = "tableLayoutPanelData";
             this.tableLayoutPanelData.RowCount = 1;
             this.tableLayoutPanelData.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelData.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
-            this.tableLayoutPanelData.Size = new System.Drawing.Size(344, 80);
+            this.tableLayoutPanelData.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 65F));
+            this.tableLayoutPanelData.Size = new System.Drawing.Size(258, 66);
             this.tableLayoutPanelData.TabIndex = 6;
             // 
             // labelData
@@ -249,10 +253,10 @@
             this.labelData.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelData.AutoSize = true;
             this.labelData.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.labelData.Location = new System.Drawing.Point(50, 16);
-            this.labelData.Margin = new System.Windows.Forms.Padding(50, 0, 25, 0);
+            this.labelData.Location = new System.Drawing.Point(38, 13);
+            this.labelData.Margin = new System.Windows.Forms.Padding(38, 0, 19, 0);
             this.labelData.Name = "labelData";
-            this.labelData.Size = new System.Drawing.Size(120, 48);
+            this.labelData.Size = new System.Drawing.Size(98, 39);
             this.labelData.TabIndex = 2;
             this.labelData.Text = "Data:";
             // 
@@ -261,19 +265,20 @@
             this.dateEmprestimo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dateEmprestimo.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
             this.dateEmprestimo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateEmprestimo.Location = new System.Drawing.Point(198, 12);
-            this.dateEmprestimo.Margin = new System.Windows.Forms.Padding(3, 3, 50, 3);
-            this.dateEmprestimo.MaximumSize = new System.Drawing.Size(300, 200);
+            this.dateEmprestimo.Location = new System.Drawing.Point(157, 10);
+            this.dateEmprestimo.Margin = new System.Windows.Forms.Padding(2, 2, 38, 2);
+            this.dateEmprestimo.MaximumSize = new System.Drawing.Size(226, 200);
             this.dateEmprestimo.Name = "dateEmprestimo";
-            this.dateEmprestimo.Size = new System.Drawing.Size(200, 55);
+            this.dateEmprestimo.Size = new System.Drawing.Size(151, 45);
             this.dateEmprestimo.TabIndex = 3;
             // 
             // FormCadastrarEmprestimo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormCadastrarEmprestimo";
             this.Text = "FormCadastrarEmprestimo";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

@@ -15,6 +15,7 @@ namespace BibliotecaDesafioAuthSoft.Forms
     public partial class FormCadastrarEmprestimo : Form
     {
         LivroService _livroService = new LivroService();
+        EmprestimoService _emprestimoService = new EmprestimoService();
 
         public FormCadastrarEmprestimo()
         {
@@ -25,6 +26,8 @@ namespace BibliotecaDesafioAuthSoft.Forms
         {
             AdjustGridViewColumns();
             LoadLivrosIntoGridView();
+            dateEmprestimo.Value = DateTime.Now;
+            dateEmprestimo.MaxDate = DateTime.Now;
         }
 
         private void AdjustGridViewColumns()
@@ -51,6 +54,33 @@ namespace BibliotecaDesafioAuthSoft.Forms
 
             telaPrincipal.Show();
             this.Close();
+        }
+
+        private void ButtonSalvar_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow selectedRow = dataGridViewLivros.SelectedRows[0];
+            if (selectedRow == null)
+            {
+                MessageBox.Show("Selecione um livro na tabela para emprestar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                int idLivro = Convert.ToInt32(selectedRow.Cells["Id"].Value);
+                string leitor = txtLeitor.Text;
+                DateTime dataEmprestimo = dateEmprestimo.Value;
+                string error = _emprestimoService.CheckErrorsAndCreate(idLivro, leitor, dataEmprestimo);
+
+                if (!string.IsNullOrEmpty(error))
+                {
+                    MessageBox.Show(error, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show("Empréstimo cadastrado com sucesso.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtLeitor.Clear();
+                    dateEmprestimo.Value = dateEmprestimo.Value;
+                }
+            }
         }
     }
 }

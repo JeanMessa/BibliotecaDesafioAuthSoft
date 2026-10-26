@@ -49,10 +49,11 @@
             this.tableLayoutPanel1.SetColumnSpan(this.LabelTitulo, 3);
             this.LabelTitulo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.LabelTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Bold);
-            this.LabelTitulo.Location = new System.Drawing.Point(3, 0);
+            this.LabelTitulo.Location = new System.Drawing.Point(2, 0);
+            this.LabelTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LabelTitulo.Name = "LabelTitulo";
-            this.LabelTitulo.Padding = new System.Windows.Forms.Padding(11, 10, 11, 10);
-            this.LabelTitulo.Size = new System.Drawing.Size(794, 78);
+            this.LabelTitulo.Padding = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.LabelTitulo.Size = new System.Drawing.Size(598, 64);
             this.LabelTitulo.TabIndex = 1;
             this.LabelTitulo.Text = "Visualizar Livros";
             this.LabelTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -70,13 +71,14 @@
             this.tableLayoutPanel1.Controls.Add(this.button1, 2, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.18182F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 63.63636F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.18182F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 450);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(602, 372);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // dataGridViewLivros
@@ -91,15 +93,15 @@
             this.Exemplares});
             this.tableLayoutPanel1.SetColumnSpan(this.dataGridViewLivros, 3);
             this.dataGridViewLivros.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridViewLivros.Location = new System.Drawing.Point(50, 81);
-            this.dataGridViewLivros.Margin = new System.Windows.Forms.Padding(50, 3, 50, 3);
+            this.dataGridViewLivros.Location = new System.Drawing.Point(38, 66);
+            this.dataGridViewLivros.Margin = new System.Windows.Forms.Padding(38, 2, 38, 2);
             this.dataGridViewLivros.MultiSelect = false;
             this.dataGridViewLivros.Name = "dataGridViewLivros";
             this.dataGridViewLivros.RowHeadersVisible = false;
             this.dataGridViewLivros.RowHeadersWidth = 51;
             this.dataGridViewLivros.RowTemplate.Height = 24;
             this.dataGridViewLivros.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewLivros.Size = new System.Drawing.Size(700, 267);
+            this.dataGridViewLivros.Size = new System.Drawing.Size(526, 222);
             this.dataGridViewLivros.TabIndex = 2;
             // 
             // Id
@@ -150,13 +152,13 @@
             this.ButtonEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
             this.ButtonEditar.ForeColor = System.Drawing.Color.White;
-            this.ButtonEditar.Location = new System.Drawing.Point(51, 376);
-            this.ButtonEditar.Margin = new System.Windows.Forms.Padding(10, 25, 10, 25);
-            this.ButtonEditar.MaximumSize = new System.Drawing.Size(0, 80);
-            this.ButtonEditar.MinimumSize = new System.Drawing.Size(0, 80);
+            this.ButtonEditar.Location = new System.Drawing.Point(33, 310);
+            this.ButtonEditar.Margin = new System.Windows.Forms.Padding(8, 20, 8, 20);
+            this.ButtonEditar.MaximumSize = new System.Drawing.Size(0, 65);
+            this.ButtonEditar.MinimumSize = new System.Drawing.Size(0, 65);
             this.ButtonEditar.Name = "ButtonEditar";
-            this.ButtonEditar.Padding = new System.Windows.Forms.Padding(11, 10, 11, 10);
-            this.ButtonEditar.Size = new System.Drawing.Size(164, 80);
+            this.ButtonEditar.Padding = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.ButtonEditar.Size = new System.Drawing.Size(134, 65);
             this.ButtonEditar.TabIndex = 3;
             this.ButtonEditar.Text = "Editar";
             this.ButtonEditar.UseVisualStyleBackColor = false;
@@ -170,13 +172,13 @@
             this.buttonExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
             this.buttonExcluir.ForeColor = System.Drawing.Color.White;
-            this.buttonExcluir.Location = new System.Drawing.Point(308, 376);
-            this.buttonExcluir.Margin = new System.Windows.Forms.Padding(10, 25, 10, 25);
-            this.buttonExcluir.MaximumSize = new System.Drawing.Size(0, 80);
-            this.buttonExcluir.MinimumSize = new System.Drawing.Size(0, 80);
+            this.buttonExcluir.Location = new System.Drawing.Point(226, 310);
+            this.buttonExcluir.Margin = new System.Windows.Forms.Padding(8, 20, 8, 20);
+            this.buttonExcluir.MaximumSize = new System.Drawing.Size(0, 65);
+            this.buttonExcluir.MinimumSize = new System.Drawing.Size(0, 65);
             this.buttonExcluir.Name = "buttonExcluir";
-            this.buttonExcluir.Padding = new System.Windows.Forms.Padding(11, 10, 11, 10);
-            this.buttonExcluir.Size = new System.Drawing.Size(181, 80);
+            this.buttonExcluir.Padding = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.buttonExcluir.Size = new System.Drawing.Size(148, 65);
             this.buttonExcluir.TabIndex = 4;
             this.buttonExcluir.Text = "Excluir";
             this.buttonExcluir.UseVisualStyleBackColor = false;
@@ -190,13 +192,13 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(555, 376);
-            this.button1.Margin = new System.Windows.Forms.Padding(10, 25, 10, 25);
-            this.button1.MaximumSize = new System.Drawing.Size(0, 80);
-            this.button1.MinimumSize = new System.Drawing.Size(0, 80);
+            this.button1.Location = new System.Drawing.Point(410, 310);
+            this.button1.Margin = new System.Windows.Forms.Padding(8, 20, 8, 20);
+            this.button1.MaximumSize = new System.Drawing.Size(0, 65);
+            this.button1.MinimumSize = new System.Drawing.Size(0, 65);
             this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(11, 10, 11, 10);
-            this.button1.Size = new System.Drawing.Size(221, 80);
+            this.button1.Padding = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.button1.Size = new System.Drawing.Size(182, 65);
             this.button1.TabIndex = 5;
             this.button1.Text = "Cancelar";
             this.button1.UseVisualStyleBackColor = false;
@@ -204,11 +206,12 @@
             // 
             // FormVisualizarLivros
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(602, 372);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.MinimumSize = new System.Drawing.Size(818, 497);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MinimumSize = new System.Drawing.Size(618, 411);
             this.Name = "FormVisualizarLivros";
             this.Text = "Visualizar Livros";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

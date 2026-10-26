@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BibliotecaDesafioAuthSoft.Models;
+using Microsoft.Data.Sqlite;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,5 +12,24 @@ namespace BibliotecaDesafioAuthSoft.Repositories
     {
         private readonly string connectionString = @"Data Source=..\..\database\biblioteca.db;";
 
+        public void Create(Emprestimo emprestimo)
+        {
+            using (var connection = new SqliteConnection(connectionString))
+            {
+                connection.Open();
+                string query = @"
+                    INSERT INTO emprestimo (livro_id, leitor, data_emprestimo, data_prevista) 
+                    VALUES (@livroId, @leitor, @dataEmprestimo, @dataPrevista);
+                ";
+                using (SqliteCommand command = new SqliteCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@livroId", emprestimo.LivroId);
+                    command.Parameters.AddWithValue("@leitor", emprestimo.Leitor);
+                    command.Parameters.AddWithValue("@dataEmprestimo", emprestimo.DataEmprestimo.ToString("yyyy-MM-dd"));
+                    command.Parameters.AddWithValue("@dataPrevista", emprestimo.DataPrevista.ToString("yyyy-MM-dd"));
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }
