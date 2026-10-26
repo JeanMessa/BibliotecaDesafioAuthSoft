@@ -27,6 +27,14 @@ namespace BibliotecaDesafioAuthSoft.Service
         public string CheckErrorsAndEdit(Livro livro)
         {
             string error = CheckErrors(livro);
+
+            int exemplaresEmprestados = GetExemplaresEmprestados(livro.Id);
+
+            if (exemplaresEmprestados > livro.Exemplares)
+            {
+                return $"Não é possível reduzir o número de exemplares para menos do que o número de exemplares emprestados. O número de exemplares deve ser maior que {exemplaresEmprestados}.";
+            }
+
             if (error == null || error == "")
             {
                 _repository.Update(livro);

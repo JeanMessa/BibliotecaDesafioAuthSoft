@@ -30,7 +30,13 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.LabelTitulo = new System.Windows.Forms.Label();
+            this.labelLivrosDisponíveis = new System.Windows.Forms.Label();
             this.dataGridViewLivros = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Titulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Autor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ano = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Exemplares = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ButtonSalvar = new System.Windows.Forms.Button();
             this.buttonCancelar = new System.Windows.Forms.Button();
             this.tableLayoutPanelLeitor = new System.Windows.Forms.TableLayoutPanel();
@@ -39,12 +45,6 @@
             this.tableLayoutPanelData = new System.Windows.Forms.TableLayoutPanel();
             this.labelData = new System.Windows.Forms.Label();
             this.dateEmprestimo = new System.Windows.Forms.DateTimePicker();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Titulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Autor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ano = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Exemplares = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.labelLivrosDisponíveis = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLivros)).BeginInit();
             this.tableLayoutPanelLeitor.SuspendLayout();
@@ -91,6 +91,20 @@
             this.LabelTitulo.Text = "Cadastar Empréstimo";
             this.LabelTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // labelLivrosDisponíveis
+            // 
+            this.tableLayoutPanel1.SetColumnSpan(this.labelLivrosDisponíveis, 2);
+            this.labelLivrosDisponíveis.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelLivrosDisponíveis.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
+            this.labelLivrosDisponíveis.Location = new System.Drawing.Point(2, 54);
+            this.labelLivrosDisponíveis.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelLivrosDisponíveis.Name = "labelLivrosDisponíveis";
+            this.labelLivrosDisponíveis.Padding = new System.Windows.Forms.Padding(8);
+            this.labelLivrosDisponíveis.Size = new System.Drawing.Size(596, 54);
+            this.labelLivrosDisponíveis.TabIndex = 7;
+            this.labelLivrosDisponíveis.Text = "Livros Disponíveis";
+            this.labelLivrosDisponíveis.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // dataGridViewLivros
             // 
             this.dataGridViewLivros.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -113,6 +127,46 @@
             this.dataGridViewLivros.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewLivros.Size = new System.Drawing.Size(524, 105);
             this.dataGridViewLivros.TabIndex = 2;
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.MinimumWidth = 6;
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            // 
+            // Titulo
+            // 
+            this.Titulo.DataPropertyName = "Titulo";
+            this.Titulo.HeaderText = "Titulo";
+            this.Titulo.MinimumWidth = 6;
+            this.Titulo.Name = "Titulo";
+            this.Titulo.ReadOnly = true;
+            // 
+            // Autor
+            // 
+            this.Autor.DataPropertyName = "Autor";
+            this.Autor.HeaderText = "Autor";
+            this.Autor.MinimumWidth = 6;
+            this.Autor.Name = "Autor";
+            this.Autor.ReadOnly = true;
+            // 
+            // Ano
+            // 
+            this.Ano.DataPropertyName = "Ano";
+            this.Ano.HeaderText = "Ano";
+            this.Ano.MinimumWidth = 6;
+            this.Ano.Name = "Ano";
+            this.Ano.ReadOnly = true;
+            // 
+            // Exemplares
+            // 
+            this.Exemplares.DataPropertyName = "Exemplares";
+            this.Exemplares.HeaderText = "Exemplares Disponíveis";
+            this.Exemplares.MinimumWidth = 6;
+            this.Exemplares.Name = "Exemplares";
+            this.Exemplares.ReadOnly = true;
             // 
             // ButtonSalvar
             // 
@@ -167,7 +221,7 @@
             this.tableLayoutPanelLeitor.Name = "tableLayoutPanelLeitor";
             this.tableLayoutPanelLeitor.RowCount = 1;
             this.tableLayoutPanelLeitor.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelLeitor.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 66F));
+            this.tableLayoutPanelLeitor.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 69F));
             this.tableLayoutPanelLeitor.Size = new System.Drawing.Size(296, 69);
             this.tableLayoutPanelLeitor.TabIndex = 5;
             // 
@@ -206,7 +260,7 @@
             this.tableLayoutPanelData.Name = "tableLayoutPanelData";
             this.tableLayoutPanelData.RowCount = 1;
             this.tableLayoutPanelData.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelData.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 66F));
+            this.tableLayoutPanelData.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 69F));
             this.tableLayoutPanelData.Size = new System.Drawing.Size(258, 69);
             this.tableLayoutPanelData.TabIndex = 6;
             // 
@@ -233,60 +287,6 @@
             this.dateEmprestimo.Name = "dateEmprestimo";
             this.dateEmprestimo.Size = new System.Drawing.Size(151, 45);
             this.dateEmprestimo.TabIndex = 3;
-            // 
-            // Id
-            // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "Id";
-            this.Id.MinimumWidth = 6;
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            // 
-            // Titulo
-            // 
-            this.Titulo.DataPropertyName = "Titulo";
-            this.Titulo.HeaderText = "Titulo";
-            this.Titulo.MinimumWidth = 6;
-            this.Titulo.Name = "Titulo";
-            this.Titulo.ReadOnly = true;
-            // 
-            // Autor
-            // 
-            this.Autor.DataPropertyName = "Autor";
-            this.Autor.HeaderText = "Autor";
-            this.Autor.MinimumWidth = 6;
-            this.Autor.Name = "Autor";
-            this.Autor.ReadOnly = true;
-            // 
-            // Ano
-            // 
-            this.Ano.DataPropertyName = "Ano";
-            this.Ano.HeaderText = "Ano";
-            this.Ano.MinimumWidth = 6;
-            this.Ano.Name = "Ano";
-            this.Ano.ReadOnly = true;
-            // 
-            // Exemplares
-            // 
-            this.Exemplares.DataPropertyName = "Exemplares";
-            this.Exemplares.HeaderText = "Exemplares Disponíveis";
-            this.Exemplares.MinimumWidth = 6;
-            this.Exemplares.Name = "Exemplares";
-            this.Exemplares.ReadOnly = true;
-            // 
-            // labelLivrosDisponíveis
-            // 
-            this.tableLayoutPanel1.SetColumnSpan(this.labelLivrosDisponíveis, 2);
-            this.labelLivrosDisponíveis.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelLivrosDisponíveis.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
-            this.labelLivrosDisponíveis.Location = new System.Drawing.Point(2, 54);
-            this.labelLivrosDisponíveis.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelLivrosDisponíveis.Name = "labelLivrosDisponíveis";
-            this.labelLivrosDisponíveis.Padding = new System.Windows.Forms.Padding(8);
-            this.labelLivrosDisponíveis.Size = new System.Drawing.Size(596, 54);
-            this.labelLivrosDisponíveis.TabIndex = 7;
-            this.labelLivrosDisponíveis.Text = "Livros Disponíveis";
-            this.labelLivrosDisponíveis.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FormCadastrarEmprestimo
             // 
