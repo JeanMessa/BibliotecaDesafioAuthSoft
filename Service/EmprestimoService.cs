@@ -1,5 +1,6 @@
 ﻿using BibliotecaDesafioAuthSoft.Models;
 using BibliotecaDesafioAuthSoft.Repositories;
+using BibliotecaDesafioAuthSoft.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -46,6 +47,11 @@ namespace BibliotecaDesafioAuthSoft.Service
             _repository.Create(emprestimo);
 
             return String.Empty;
+        }
+
+        public List<EmprestimoAbertoDTO> GetEmprestimosEmAberto()
+        {
+            return _repository.GetEmprestimosEmAberto();
         }
     }
 }

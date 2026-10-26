@@ -32,17 +32,16 @@
             this.LabelTitulo = new System.Windows.Forms.Label();
             this.labelEmpréstimosAbertos = new System.Windows.Forms.Label();
             this.dataGridViewEmprestimo = new System.Windows.Forms.DataGridView();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Livro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Leitor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DataEmprestimo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DataDevolucao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Multa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanelData = new System.Windows.Forms.TableLayoutPanel();
             this.labelData = new System.Windows.Forms.Label();
             this.dateEmprestimo = new System.Windows.Forms.DateTimePicker();
             this.ButtonSalvar = new System.Windows.Forms.Button();
             this.buttonCancelar = new System.Windows.Forms.Button();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Livro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Leitor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataEmprestimo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataPrevista = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmprestimo)).BeginInit();
             this.tableLayoutPanelData.SuspendLayout();
@@ -105,14 +104,14 @@
             // dataGridViewEmprestimo
             // 
             this.dataGridViewEmprestimo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewEmprestimo.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataGridViewEmprestimo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewEmprestimo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
             this.Livro,
             this.Leitor,
             this.DataEmprestimo,
-            this.DataDevolucao,
-            this.Multa});
+            this.DataPrevista});
             this.tableLayoutPanel1.SetColumnSpan(this.dataGridViewEmprestimo, 2);
             this.dataGridViewEmprestimo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewEmprestimo.Location = new System.Drawing.Point(38, 136);
@@ -125,42 +124,6 @@
             this.dataGridViewEmprestimo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewEmprestimo.Size = new System.Drawing.Size(724, 131);
             this.dataGridViewEmprestimo.TabIndex = 2;
-            // 
-            // Id
-            // 
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            // 
-            // Livro
-            // 
-            this.Livro.HeaderText = "Livro";
-            this.Livro.Name = "Livro";
-            this.Livro.ReadOnly = true;
-            // 
-            // Leitor
-            // 
-            this.Leitor.HeaderText = "Leitor";
-            this.Leitor.Name = "Leitor";
-            this.Leitor.ReadOnly = true;
-            // 
-            // DataEmprestimo
-            // 
-            this.DataEmprestimo.HeaderText = "Data Empréstimo";
-            this.DataEmprestimo.Name = "DataEmprestimo";
-            this.DataEmprestimo.ReadOnly = true;
-            // 
-            // DataDevolucao
-            // 
-            this.DataDevolucao.HeaderText = "Data Devolução";
-            this.DataDevolucao.Name = "DataDevolucao";
-            this.DataDevolucao.ReadOnly = true;
-            // 
-            // Multa
-            // 
-            this.Multa.HeaderText = "Multa";
-            this.Multa.Name = "Multa";
-            this.Multa.ReadOnly = true;
             // 
             // tableLayoutPanelData
             // 
@@ -242,6 +205,41 @@
             this.buttonCancelar.Text = "Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = false;
             // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            // 
+            // Livro
+            // 
+            this.Livro.DataPropertyName = "LivroTitulo";
+            this.Livro.HeaderText = "Livro";
+            this.Livro.Name = "Livro";
+            this.Livro.ReadOnly = true;
+            // 
+            // Leitor
+            // 
+            this.Leitor.DataPropertyName = "Leitor";
+            this.Leitor.HeaderText = "Leitor";
+            this.Leitor.Name = "Leitor";
+            this.Leitor.ReadOnly = true;
+            // 
+            // DataEmprestimo
+            // 
+            this.DataEmprestimo.DataPropertyName = "DataEmprestimo";
+            this.DataEmprestimo.HeaderText = "Data Empréstimo";
+            this.DataEmprestimo.Name = "DataEmprestimo";
+            this.DataEmprestimo.ReadOnly = true;
+            // 
+            // DataPrevista
+            // 
+            this.DataPrevista.DataPropertyName = "DataPrevista";
+            this.DataPrevista.HeaderText = "Devolução Prevista";
+            this.DataPrevista.Name = "DataPrevista";
+            this.DataPrevista.ReadOnly = true;
+            // 
             // FormCadastrarDevolucao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -276,7 +274,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Livro;
         private System.Windows.Forms.DataGridViewTextBoxColumn Leitor;
         private System.Windows.Forms.DataGridViewTextBoxColumn DataEmprestimo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DataDevolucao;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Multa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DataPrevista;
     }
 }

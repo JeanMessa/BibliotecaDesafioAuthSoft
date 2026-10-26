@@ -112,6 +112,7 @@
     <Compile Include="Repositories\LivroRepository.cs" />
     <Compile Include="Service\EmprestimoService.cs" />
     <Compile Include="Service\LivroService.cs" />
+    <Compile Include="DTO\EmprestimoAbertoDTO.cs" />
     <EmbeddedResource Include="Forms\FormCadastrarDevolucao.resx">
       <DependentUpon>FormCadastrarDevolucao.cs</DependentUpon>
     </EmbeddedResource>

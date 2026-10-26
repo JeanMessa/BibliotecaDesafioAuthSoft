@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BibliotecaDesafioAuthSoft.Service;
+using BibliotecaDesafioAuthSoft.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +14,7 @@ namespace BibliotecaDesafioAuthSoft.Forms
 {
     public partial class FormCadastrarDevolucao : Form
     {
+        EmprestimoService _emprestimoService = new EmprestimoService();
         public FormCadastrarDevolucao()
         {
             InitializeComponent();
@@ -20,6 +23,7 @@ namespace BibliotecaDesafioAuthSoft.Forms
         private void FormCadastrarDevolução_Load(object sender, EventArgs e)
         {
             AdjustGridViewColumns();
+            LoadEmprestimosEmAberto();
         }
 
         private void AdjustGridViewColumns()
@@ -30,9 +34,14 @@ namespace BibliotecaDesafioAuthSoft.Forms
                 dataGridViewEmprestimo.Columns["Livro"].FillWeight = 250;
                 dataGridViewEmprestimo.Columns["Leitor"].FillWeight = 200;
                 dataGridViewEmprestimo.Columns["DataEmprestimo"].FillWeight = 110;
-                dataGridViewEmprestimo.Columns["DataDevolucao"].FillWeight = 110;
-                dataGridViewEmprestimo.Columns["Multa"].FillWeight = 80;
+                dataGridViewEmprestimo.Columns["DataPrevista"].FillWeight = 110;
             }
+        }
+
+        private void LoadEmprestimosEmAberto()
+        {
+            List<EmprestimoAbertoDTO> emprestimosEmAberto = _emprestimoService.GetEmprestimosEmAberto();
+            dataGridViewEmprestimo.DataSource = emprestimosEmAberto;
         }
     }
 }
