@@ -46,11 +46,18 @@ namespace BibliotecaDesafioAuthSoft.Forms
             DateTime dateTimeDevolucao = dateDevolucao.Value.Date;
             List<EmprestimosMultaDTO> emprestimos = _emprestimoService.GetEmprestimosComMulta(dateTimeDevolucao);
             dataGridViewEmprestimo.DataSource = emprestimos;
+
+            UpdateMultaTotal();
         }
 
         private void dateDevolucao_ValueChanged(object sender, EventArgs e)
         {
             LoadEmprestimosIntoGridView();
+        }
+
+        private void UpdateMultaTotal()
+        {
+            labelMultaTotal.Text = $"Multa Total: {_emprestimoService.GetMultaTotalByDataDevolucao(dateDevolucao.Value.Date)}";
         }
     }
 }

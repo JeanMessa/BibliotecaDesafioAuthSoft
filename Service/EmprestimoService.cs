@@ -115,5 +115,12 @@ namespace BibliotecaDesafioAuthSoft.Service
         {
             return _repository.GetEmprestimosComMultaByDataDevolucao(dataDevolucao);
         }
+
+        public string GetMultaTotalByDataDevolucao(DateTime dataDevolucao)
+        {
+            float totalMultaCentavos = _repository.GetTotalMultaByDataDevolucao(dataDevolucao);
+
+            return (totalMultaCentavos / 100).ToString("C");
+        }
     }
 }

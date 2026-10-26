@@ -211,5 +211,24 @@ namespace BibliotecaDesafioAuthSoft.Repositories
                 }
             }
         }
+
+        public int GetTotalMultaByDataDevolucao(DateTime dataDevolucao)
+        {
+            using (SqliteConnection connection = new SqliteConnection(connectionString))
+            {
+                connection.Open();
+                string query = @"
+                    SELECT SUM(multa_centavos) 
+                    FROM emprestimo 
+                    WHERE data_prevista < Date('now') AND data_devolucao = @dataDevolucao;
+                ";
+                using (SqliteCommand command = new SqliteCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@dataDevolucao", dataDevolucao.ToString("yyyy-MM-dd"));
+                    object result = command.ExecuteScalar();
+                    return result != DBNull.Value ? Convert.ToInt32(result) : 0;
+                }
+            }
+        }
     }
 }
