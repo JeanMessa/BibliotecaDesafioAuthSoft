@@ -121,5 +121,25 @@ namespace BibliotecaDesafioAuthSoft.Repositories
                 }
             }
         }
+
+        public bool IsLivroEmprestadoParaLeitor(int livroId, string leitor)
+        {
+            using (SqliteConnection connection = new SqliteConnection(connectionString))
+            {
+                connection.Open();
+                string query = @"
+                    SELECT COUNT(*) 
+                    FROM emprestimo 
+                    WHERE livro_id = @livroId AND leitor = @leitor AND data_devolucao IS NULL;
+                ";
+                using (SqliteCommand command = new SqliteCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@livroId", livroId);
+                    command.Parameters.AddWithValue("@leitor", leitor);
+                    long count = (long)command.ExecuteScalar();
+                    return count > 0;
+                }
+            }
+        }
     }
 }

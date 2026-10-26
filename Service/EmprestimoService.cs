@@ -45,6 +45,11 @@ namespace BibliotecaDesafioAuthSoft.Service
                 DataPrevista = dataEmprestimo.AddDays(7)
             };
 
+            if(IsLivroEmprestadoParaLeitor(livroId, leitor.ToLower()))
+            {
+                return "O leitor já possui um empréstimo em aberto para este livro.";
+            }
+
             _repository.Create(emprestimo);
 
             return String.Empty;
@@ -78,6 +83,11 @@ namespace BibliotecaDesafioAuthSoft.Service
         public List<EmprestimoAbertoDTO> GetEmprestimosEmAberto()
         {
             return _repository.GetEmprestimosEmAberto();
+        }
+
+        private bool IsLivroEmprestadoParaLeitor(int livroId, string leitor)
+        {
+            return _repository.IsLivroEmprestadoParaLeitor(livroId, leitor);
         }
     }
 }
