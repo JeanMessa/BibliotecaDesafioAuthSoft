@@ -12,15 +12,15 @@ using System.Windows.Forms;
 
 namespace BibliotecaDesafioAuthSoft.Forms
 {
-    public partial class FormCadastrarDevolucao : Form
+    public partial class FormRegistrarDevolucao : Form
     {
         EmprestimoService _emprestimoService = new EmprestimoService();
-        public FormCadastrarDevolucao()
+        public FormRegistrarDevolucao()
         {
             InitializeComponent();
         }
 
-        private void FormCadastrarDevolução_Load(object sender, EventArgs e)
+        private void FormRegistrarDevolução_Load(object sender, EventArgs e)
         {
             AdjustGridViewColumns();
             LoadEmprestimosEmAberto();

@@ -154,7 +154,7 @@
             this.buttonCadastrarDevolucao.Name = "buttonCadastrarDevolucao";
             this.buttonCadastrarDevolucao.Size = new System.Drawing.Size(206, 41);
             this.buttonCadastrarDevolucao.TabIndex = 6;
-            this.buttonCadastrarDevolucao.Text = "Cadastrar Devolução";
+            this.buttonCadastrarDevolucao.Text = "Registrar Devolução";
             this.buttonCadastrarDevolucao.UseVisualStyleBackColor = true;
             this.buttonCadastrarDevolucao.Click += new System.EventHandler(this.buttonCadastrarDevolucao_Click);
             // 

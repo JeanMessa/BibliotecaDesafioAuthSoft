@@ -1,6 +1,6 @@
 ﻿namespace BibliotecaDesafioAuthSoft.Forms
 {
-    partial class FormCadastrarDevolucao
+    partial class FormRegistrarDevolucao
     {
         /// <summary>
         /// Required designer variable.
@@ -32,16 +32,16 @@
             this.LabelTitulo = new System.Windows.Forms.Label();
             this.labelEmpréstimosAbertos = new System.Windows.Forms.Label();
             this.dataGridViewEmprestimo = new System.Windows.Forms.DataGridView();
-            this.tableLayoutPanelData = new System.Windows.Forms.TableLayoutPanel();
-            this.labelData = new System.Windows.Forms.Label();
-            this.dateDevolucao = new System.Windows.Forms.DateTimePicker();
-            this.ButtonRegistrar = new System.Windows.Forms.Button();
-            this.buttonCancelar = new System.Windows.Forms.Button();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Livro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Leitor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataEmprestimo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataPrevista = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tableLayoutPanelData = new System.Windows.Forms.TableLayoutPanel();
+            this.labelData = new System.Windows.Forms.Label();
+            this.dateDevolucao = new System.Windows.Forms.DateTimePicker();
+            this.ButtonRegistrar = new System.Windows.Forms.Button();
+            this.buttonCancelar = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmprestimo)).BeginInit();
             this.tableLayoutPanelData.SuspendLayout();
@@ -84,7 +84,7 @@
             this.LabelTitulo.Padding = new System.Windows.Forms.Padding(8);
             this.LabelTitulo.Size = new System.Drawing.Size(796, 67);
             this.LabelTitulo.TabIndex = 1;
-            this.LabelTitulo.Text = "Cadastar Devolução";
+            this.LabelTitulo.Text = "Registrar Devolução";
             this.LabelTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelEmpréstimosAbertos
@@ -124,6 +124,41 @@
             this.dataGridViewEmprestimo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewEmprestimo.Size = new System.Drawing.Size(724, 131);
             this.dataGridViewEmprestimo.TabIndex = 2;
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            // 
+            // Livro
+            // 
+            this.Livro.DataPropertyName = "LivroTitulo";
+            this.Livro.HeaderText = "Livro";
+            this.Livro.Name = "Livro";
+            this.Livro.ReadOnly = true;
+            // 
+            // Leitor
+            // 
+            this.Leitor.DataPropertyName = "Leitor";
+            this.Leitor.HeaderText = "Leitor";
+            this.Leitor.Name = "Leitor";
+            this.Leitor.ReadOnly = true;
+            // 
+            // DataEmprestimo
+            // 
+            this.DataEmprestimo.DataPropertyName = "DataEmprestimo";
+            this.DataEmprestimo.HeaderText = "Data Empréstimo";
+            this.DataEmprestimo.Name = "DataEmprestimo";
+            this.DataEmprestimo.ReadOnly = true;
+            // 
+            // DataPrevista
+            // 
+            this.DataPrevista.DataPropertyName = "DataPrevista";
+            this.DataPrevista.HeaderText = "Devolução Prevista";
+            this.DataPrevista.Name = "DataPrevista";
+            this.DataPrevista.ReadOnly = true;
             // 
             // tableLayoutPanelData
             // 
@@ -207,51 +242,16 @@
             this.buttonCancelar.UseVisualStyleBackColor = false;
             this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
             // 
-            // Id
-            // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            // 
-            // Livro
-            // 
-            this.Livro.DataPropertyName = "LivroTitulo";
-            this.Livro.HeaderText = "Livro";
-            this.Livro.Name = "Livro";
-            this.Livro.ReadOnly = true;
-            // 
-            // Leitor
-            // 
-            this.Leitor.DataPropertyName = "Leitor";
-            this.Leitor.HeaderText = "Leitor";
-            this.Leitor.Name = "Leitor";
-            this.Leitor.ReadOnly = true;
-            // 
-            // DataEmprestimo
-            // 
-            this.DataEmprestimo.DataPropertyName = "DataEmprestimo";
-            this.DataEmprestimo.HeaderText = "Data Empréstimo";
-            this.DataEmprestimo.Name = "DataEmprestimo";
-            this.DataEmprestimo.ReadOnly = true;
-            // 
-            // DataPrevista
-            // 
-            this.DataPrevista.DataPropertyName = "DataPrevista";
-            this.DataPrevista.HeaderText = "Devolução Prevista";
-            this.DataPrevista.Name = "DataPrevista";
-            this.DataPrevista.ReadOnly = true;
-            // 
-            // FormCadastrarDevolucao
+            // FormRegistrarDevolucao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "FormCadastrarDevolucao";
+            this.Name = "FormRegistrarDevolucao";
             this.Text = "FormCadastrarDevolução";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.FormCadastrarDevolução_Load);
+            this.Load += new System.EventHandler(this.FormRegistrarDevolução_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmprestimo)).EndInit();

@@ -52,7 +52,7 @@ namespace BibliotecaDesafioAuthSoft
 
         private void buttonCadastrarDevolucao_Click(object sender, EventArgs e)
         {
-            using (FormCadastrarDevolucao formCadastrarDevolucao = new FormCadastrarDevolucao())
+            using (FormRegistrarDevolucao formCadastrarDevolucao = new FormRegistrarDevolucao())
             {
                 formCadastrarDevolucao.ShowDialog();
                 this.Hide();
