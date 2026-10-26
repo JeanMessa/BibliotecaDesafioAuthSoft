@@ -66,5 +66,60 @@ namespace BibliotecaDesafioAuthSoft.Repositories
             }
             return emprestimos;
         }
+
+        public Emprestimo GetEmprestimoById(int emprestimoId)
+        {
+            using (SqliteConnection connection = new SqliteConnection(connectionString))
+            {
+                connection.Open();
+                string query = @"
+                    SELECT id, livro_id, leitor, data_emprestimo, data_prevista, data_devolucao, multa_centavos
+                    FROM emprestimo
+                    WHERE id = @id;
+                ";
+                using (SqliteCommand command = new SqliteCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@id", emprestimoId);
+                    using (SqliteDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            Emprestimo emprestimo = new Emprestimo
+                            {
+                                Id = reader.GetInt32(0),
+                                LivroId = reader.GetInt32(1),
+                                Leitor = reader.GetString(2),
+                                DataEmprestimo = reader.GetDateTime(3),
+                                DataPrevista = reader.GetDateTime(4),
+                                DataDevolucao = reader.IsDBNull(5) ? (DateTime?)null : reader.GetDateTime(5),
+                                MultaCentavos = reader.GetInt32(6)
+                            };
+                            return emprestimo;
+                        }
+                    }
+                }
+            }
+            return null;
+        }
+
+        public void RegisterDevolucao(Emprestimo emprestimo)
+        {
+            using (var connection = new SqliteConnection(connectionString))
+            {
+                connection.Open();
+                string query = @"
+                    UPDATE emprestimo 
+                    SET data_devolucao = @dataDevolucao, multa_centavos = @multaCentavos
+                    WHERE id = @id;
+                ";
+                using (SqliteCommand command = new SqliteCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@dataDevolucao", emprestimo.DataDevolucao?.ToString("yyyy-MM-dd"));
+                    command.Parameters.AddWithValue("@multaCentavos", emprestimo.MultaCentavos);
+                    command.Parameters.AddWithValue("@id", emprestimo.Id);
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }

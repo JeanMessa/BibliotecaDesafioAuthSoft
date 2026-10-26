@@ -34,8 +34,8 @@
             this.dataGridViewEmprestimo = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanelData = new System.Windows.Forms.TableLayoutPanel();
             this.labelData = new System.Windows.Forms.Label();
-            this.dateEmprestimo = new System.Windows.Forms.DateTimePicker();
-            this.ButtonSalvar = new System.Windows.Forms.Button();
+            this.dateDevolucao = new System.Windows.Forms.DateTimePicker();
+            this.ButtonRegistrar = new System.Windows.Forms.Button();
             this.buttonCancelar = new System.Windows.Forms.Button();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Livro = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,7 +56,7 @@
             this.tableLayoutPanel1.Controls.Add(this.labelEmpréstimosAbertos, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.dataGridViewEmprestimo, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanelData, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.ButtonSalvar, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.ButtonRegistrar, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.buttonCancelar, 1, 4);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -132,7 +132,7 @@
             this.tableLayoutPanelData.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanelData.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanelData.Controls.Add(this.labelData, 0, 0);
-            this.tableLayoutPanelData.Controls.Add(this.dateEmprestimo, 1, 0);
+            this.tableLayoutPanelData.Controls.Add(this.dateDevolucao, 1, 0);
             this.tableLayoutPanelData.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelData.Location = new System.Drawing.Point(2, 271);
             this.tableLayoutPanelData.Margin = new System.Windows.Forms.Padding(2, 2, 40, 2);
@@ -155,36 +155,37 @@
             this.labelData.TabIndex = 2;
             this.labelData.Text = "Data da Devolução:";
             // 
-            // dateEmprestimo
+            // dateDevolucao
             // 
-            this.dateEmprestimo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateEmprestimo.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.dateEmprestimo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateEmprestimo.Location = new System.Drawing.Point(375, 20);
-            this.dateEmprestimo.Margin = new System.Windows.Forms.Padding(2, 2, 38, 2);
-            this.dateEmprestimo.MaximumSize = new System.Drawing.Size(226, 200);
-            this.dateEmprestimo.Name = "dateEmprestimo";
-            this.dateEmprestimo.Size = new System.Drawing.Size(226, 45);
-            this.dateEmprestimo.TabIndex = 3;
+            this.dateDevolucao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.dateDevolucao.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
+            this.dateDevolucao.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateDevolucao.Location = new System.Drawing.Point(375, 20);
+            this.dateDevolucao.Margin = new System.Windows.Forms.Padding(2, 2, 38, 2);
+            this.dateDevolucao.MaximumSize = new System.Drawing.Size(226, 200);
+            this.dateDevolucao.Name = "dateDevolucao";
+            this.dateDevolucao.Size = new System.Drawing.Size(226, 45);
+            this.dateDevolucao.TabIndex = 3;
             // 
-            // ButtonSalvar
+            // ButtonRegistrar
             // 
-            this.ButtonSalvar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ButtonSalvar.AutoSize = true;
-            this.ButtonSalvar.BackColor = System.Drawing.Color.MediumBlue;
-            this.ButtonSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.ButtonSalvar.ForeColor = System.Drawing.Color.White;
-            this.ButtonSalvar.Location = new System.Drawing.Point(129, 379);
-            this.ButtonSalvar.Margin = new System.Windows.Forms.Padding(8, 20, 8, 20);
-            this.ButtonSalvar.MaximumSize = new System.Drawing.Size(0, 65);
-            this.ButtonSalvar.MinimumSize = new System.Drawing.Size(0, 65);
-            this.ButtonSalvar.Name = "ButtonSalvar";
-            this.ButtonSalvar.Padding = new System.Windows.Forms.Padding(8);
-            this.ButtonSalvar.Size = new System.Drawing.Size(142, 65);
-            this.ButtonSalvar.TabIndex = 3;
-            this.ButtonSalvar.Text = "Salvar";
-            this.ButtonSalvar.UseVisualStyleBackColor = false;
+            this.ButtonRegistrar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ButtonRegistrar.AutoSize = true;
+            this.ButtonRegistrar.BackColor = System.Drawing.Color.MediumBlue;
+            this.ButtonRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
+            this.ButtonRegistrar.ForeColor = System.Drawing.Color.White;
+            this.ButtonRegistrar.Location = new System.Drawing.Point(108, 379);
+            this.ButtonRegistrar.Margin = new System.Windows.Forms.Padding(8, 20, 8, 20);
+            this.ButtonRegistrar.MaximumSize = new System.Drawing.Size(0, 65);
+            this.ButtonRegistrar.MinimumSize = new System.Drawing.Size(0, 65);
+            this.ButtonRegistrar.Name = "ButtonRegistrar";
+            this.ButtonRegistrar.Padding = new System.Windows.Forms.Padding(8);
+            this.ButtonRegistrar.Size = new System.Drawing.Size(183, 65);
+            this.ButtonRegistrar.TabIndex = 3;
+            this.ButtonRegistrar.Text = "Registrar";
+            this.ButtonRegistrar.UseVisualStyleBackColor = false;
+            this.ButtonRegistrar.Click += new System.EventHandler(this.ButtonRegistrar_Click);
             // 
             // buttonCancelar
             // 
@@ -204,6 +205,7 @@
             this.buttonCancelar.TabIndex = 4;
             this.buttonCancelar.Text = "Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = false;
+            this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
             // 
             // Id
             // 
@@ -265,11 +267,11 @@
         private System.Windows.Forms.Label LabelTitulo;
         private System.Windows.Forms.Label labelEmpréstimosAbertos;
         private System.Windows.Forms.DataGridView dataGridViewEmprestimo;
-        private System.Windows.Forms.Button ButtonSalvar;
+        private System.Windows.Forms.Button ButtonRegistrar;
         private System.Windows.Forms.Button buttonCancelar;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelData;
         private System.Windows.Forms.Label labelData;
-        private System.Windows.Forms.DateTimePicker dateEmprestimo;
+        private System.Windows.Forms.DateTimePicker dateDevolucao;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Livro;
         private System.Windows.Forms.DataGridViewTextBoxColumn Leitor;

@@ -43,5 +43,38 @@ namespace BibliotecaDesafioAuthSoft.Forms
             List<EmprestimoAbertoDTO> emprestimosEmAberto = _emprestimoService.GetEmprestimosEmAberto();
             dataGridViewEmprestimo.DataSource = emprestimosEmAberto;
         }
+
+        private void buttonCancelar_Click(object sender, EventArgs e)
+        {
+            TelaPrincipal telaPrincipal = new TelaPrincipal();
+
+            telaPrincipal.Show();
+            this.Close();
+        }
+
+        private void ButtonRegistrar_Click(object sender, EventArgs e)
+        {
+            if(dataGridViewEmprestimo.SelectedRows.Count > 0)
+            {
+                int emprestimoId = Convert.ToInt32(dataGridViewEmprestimo.SelectedRows[0].Cells["Id"].Value);
+                DateTime dataDevolucao = dateDevolucao.Value;
+
+                String error = _emprestimoService.CheckErrorsAndRegistrarDevolucao(emprestimoId, dataDevolucao);
+                if (string.IsNullOrEmpty(error))
+                {
+                    MessageBox.Show("Devolução registrada com sucesso.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadEmprestimosEmAberto();
+                }
+                else
+                {
+                    MessageBox.Show(error, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecione um empréstimo para registrar a devolução.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
     }
 }

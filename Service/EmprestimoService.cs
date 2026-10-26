@@ -1,5 +1,6 @@
 ﻿using BibliotecaDesafioAuthSoft.Models;
 using BibliotecaDesafioAuthSoft.Repositories;
+using BibliotecaDesafioAuthSoft.Util;
 using BibliotecaDesafioAuthSoft.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -46,6 +47,31 @@ namespace BibliotecaDesafioAuthSoft.Service
 
             _repository.Create(emprestimo);
 
+            return String.Empty;
+        }
+
+        public string CheckErrorsAndRegistrarDevolucao(int emprestimoId, DateTime dataDevolucao)
+        {
+            Emprestimo emprestimo = _repository.GetEmprestimoById(emprestimoId);
+            if(emprestimo == null)
+            {
+                return "O empréstimo não foi encontrado.";
+            }
+
+            if(dataDevolucao < emprestimo.DataEmprestimo)
+            {
+                return "A data de devolução não pode ser menor que a data de empréstimo.";
+            }
+
+            if (dataDevolucao > DateTime.Now)
+            {
+                return "A data de devolução não pode ser maior que a data atual.";
+            }
+
+            emprestimo.DataDevolucao = dataDevolucao;
+            emprestimo.MultaCentavos = UtilMulta.CalculateMulta(emprestimo.DataPrevista, dataDevolucao);
+
+            _repository.RegisterDevolucao(emprestimo);
             return String.Empty;
         }
 

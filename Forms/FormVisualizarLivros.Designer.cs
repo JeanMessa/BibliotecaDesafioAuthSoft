@@ -52,7 +52,7 @@
             this.LabelTitulo.Location = new System.Drawing.Point(2, 0);
             this.LabelTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LabelTitulo.Name = "LabelTitulo";
-            this.LabelTitulo.Padding = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.LabelTitulo.Padding = new System.Windows.Forms.Padding(8);
             this.LabelTitulo.Size = new System.Drawing.Size(598, 64);
             this.LabelTitulo.TabIndex = 1;
             this.LabelTitulo.Text = "Visualizar Livros";
@@ -71,7 +71,7 @@
             this.tableLayoutPanel1.Controls.Add(this.button1, 2, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.18182F));
@@ -157,7 +157,7 @@
             this.ButtonEditar.MaximumSize = new System.Drawing.Size(0, 65);
             this.ButtonEditar.MinimumSize = new System.Drawing.Size(0, 65);
             this.ButtonEditar.Name = "ButtonEditar";
-            this.ButtonEditar.Padding = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.ButtonEditar.Padding = new System.Windows.Forms.Padding(8);
             this.ButtonEditar.Size = new System.Drawing.Size(134, 65);
             this.ButtonEditar.TabIndex = 3;
             this.ButtonEditar.Text = "Editar";
@@ -177,7 +177,7 @@
             this.buttonExcluir.MaximumSize = new System.Drawing.Size(0, 65);
             this.buttonExcluir.MinimumSize = new System.Drawing.Size(0, 65);
             this.buttonExcluir.Name = "buttonExcluir";
-            this.buttonExcluir.Padding = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.buttonExcluir.Padding = new System.Windows.Forms.Padding(8);
             this.buttonExcluir.Size = new System.Drawing.Size(148, 65);
             this.buttonExcluir.TabIndex = 4;
             this.buttonExcluir.Text = "Excluir";
@@ -197,7 +197,7 @@
             this.button1.MaximumSize = new System.Drawing.Size(0, 65);
             this.button1.MinimumSize = new System.Drawing.Size(0, 65);
             this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.button1.Padding = new System.Windows.Forms.Padding(8);
             this.button1.Size = new System.Drawing.Size(182, 65);
             this.button1.TabIndex = 5;
             this.button1.Text = "Cancelar";
@@ -210,7 +210,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(602, 372);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimumSize = new System.Drawing.Size(618, 411);
             this.Name = "FormVisualizarLivros";
             this.Text = "Visualizar Livros";
