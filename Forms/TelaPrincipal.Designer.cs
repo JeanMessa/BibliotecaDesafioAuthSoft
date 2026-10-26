@@ -55,7 +55,7 @@
             this.tableLayoutPanel1.Controls.Add(this.buttonVisualizarMultas, 1, 4);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(8);
             this.tableLayoutPanel1.MaximumSize = new System.Drawing.Size(0, 650);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
@@ -147,12 +147,12 @@
             this.buttonCadastrarDevolucao.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonCadastrarDevolucao.AutoSize = true;
             this.buttonCadastrarDevolucao.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.buttonCadastrarDevolucao.Location = new System.Drawing.Point(462, 252);
+            this.buttonCadastrarDevolucao.Location = new System.Drawing.Point(467, 252);
             this.buttonCadastrarDevolucao.Margin = new System.Windows.Forms.Padding(15, 16, 15, 16);
             this.buttonCadastrarDevolucao.MaximumSize = new System.Drawing.Size(0, 650);
             this.buttonCadastrarDevolucao.MinimumSize = new System.Drawing.Size(0, 41);
             this.buttonCadastrarDevolucao.Name = "buttonCadastrarDevolucao";
-            this.buttonCadastrarDevolucao.Size = new System.Drawing.Size(206, 41);
+            this.buttonCadastrarDevolucao.Size = new System.Drawing.Size(197, 41);
             this.buttonCadastrarDevolucao.TabIndex = 6;
             this.buttonCadastrarDevolucao.Text = "Registrar Devolução";
             this.buttonCadastrarDevolucao.UseVisualStyleBackColor = true;
@@ -172,6 +172,7 @@
             this.buttonVisualizarAtrasos.TabIndex = 7;
             this.buttonVisualizarAtrasos.Text = "Visualizar Atrasos";
             this.buttonVisualizarAtrasos.UseVisualStyleBackColor = true;
+            this.buttonVisualizarAtrasos.Click += new System.EventHandler(this.buttonVisualizarAtrasos_Click);
             // 
             // buttonVisualizarMultas
             // 
@@ -195,7 +196,7 @@
             this.ClientSize = new System.Drawing.Size(754, 547);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "TelaPrincipal";
             this.Text = "Tela Principal";

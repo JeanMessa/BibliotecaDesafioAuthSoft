@@ -58,5 +58,14 @@ namespace BibliotecaDesafioAuthSoft
                 this.Hide();
             }
         }
+
+        private void buttonVisualizarAtrasos_Click(object sender, EventArgs e)
+        {
+            using (FormEmprestimosEmAtraso formEmprestimosEmAtraso = new FormEmprestimosEmAtraso())
+            {
+                formEmprestimosEmAtraso.ShowDialog();
+                this.Hide();
+            }
+        }
     }
 }
